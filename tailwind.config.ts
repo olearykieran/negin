@@ -8,6 +8,16 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        // We'll map some custom font families (after you install or load them)
+        // Note: If these fonts aren't from Google, you can set them up locally or via another provider
+        opensans: ['"Open Sans"', "sans-serif"],
+        lora: ['"Lora"', "serif"],
+        josefinsans: ['"Josefin Sans"', "sans-serif"],
+        dancingscript: ['"Dancing Script"', "cursive"],
+        satoshi: ['"Satoshi"', "sans-serif"],
+        supreme: ['"Supreme"', "sans-serif"],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
