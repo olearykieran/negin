@@ -1,17 +1,27 @@
+// src/components/Header.tsx
 "use client";
 
 import React, { useState } from "react";
 import Link from "next/link";
 import { FaInstagram, FaTwitter, FaYoutube, FaBars, FaTimes } from "react-icons/fa";
 import { ChevronDownIcon } from "@heroicons/react/solid";
+import translations from "@/lib/translations";
 
 export default function Header() {
-  // State to track whether the mobile menu is open
+  // Current language state. Defaults to English. Could also read from localStorage, etc.
+  const [lang, setLang] = useState<"en" | "fa">("en");
   const [isOpen, setIsOpen] = useState(false);
 
+  // Helper to switch between English and Farsi
+  const toggleLang = () => {
+    setLang((prev) => (prev === "en" ? "fa" : "en"));
+  };
+
+  const t = translations[lang]; // shorthand
+
   return (
-    <header className="fixed top-0 w-full  z-50 bg-[rgb(220,220,220)] shadow-sm">
-      <nav className="container mx-auto flex items-center justify-between py-12 px-6">
+    <header className="fixed top-0 w-full z-50 bg-[rgb(220,220,220)] shadow-sm">
+      <nav className="container mx-auto flex items-center justify-between py-16 px-6">
         {/* Left: Social icons */}
         <div className="flex items-center space-x-4">
           <a
@@ -43,42 +53,45 @@ export default function Header() {
         {/* Center Nav (Desktop Only) */}
         <ul className="hidden md:flex items-center space-x-8 font-noto font-semibold text-black">
           <li>
-            <Link href="#home" scroll={false} className="hover:text-black">
-              Home
+            <Link href="/#home" scroll={false} className="hover:text-black">
+              {t.menu.home}
             </Link>
           </li>
           <li>
-            <Link href="#biography" scroll={false} className="hover:text-black">
-              Biography
+            <Link href="/#biography" scroll={false} className="hover:text-black">
+              {t.menu.biography}
             </Link>
           </li>
           <li>
-            <Link href="#filmography" scroll={false} className="hover:text-black">
-              Filmography
+            <Link href="/#filmography" scroll={false} className="hover:text-black">
+              {t.menu.filmography}
             </Link>
           </li>
           <li>
-            <Link href="#gallery" scroll={false} className="hover:text-black">
-              Gallery
+            <Link href="/gallery" className="hover:text-black">
+              {t.menu.gallery}
             </Link>
           </li>
           <li>
-            <Link href="#press" scroll={false} className="hover:text-black">
-              Press
+            <Link href="/#press" scroll={false} className="hover:text-black">
+              {t.menu.press}
             </Link>
           </li>
           <li>
-            <Link href="#contact" scroll={false} className="hover:text-black">
-              Contact
+            <Link href="/#contact" scroll={false} className="hover:text-black">
+              {t.menu.contact}
             </Link>
           </li>
         </ul>
 
         {/* Right Side: Language Toggle (Desktop) or Hamburger (Mobile) */}
         <div className="flex items-center space-x-4">
-          {/* Language toggle only shown on md+ screens (optional) */}
-          <div className="hidden md:flex items-center space-x-1 text-[rgb(143,143,143)] hover:text-black cursor-pointer">
-            <span>EN</span>
+          {/* Language toggle on md+ screens */}
+          <div
+            className="hidden md:flex items-center space-x-1 text-[rgb(143,143,143)] hover:text-black cursor-pointer"
+            onClick={toggleLang}
+          >
+            <span>{t.languageLabel}</span>
             <ChevronDownIcon className="w-4 h-4" />
           </div>
 
@@ -97,70 +110,72 @@ export default function Header() {
       {isOpen && (
         <div className="md:hidden bg-white shadow-sm">
           <ul className="flex flex-col items-start p-4 space-y-4 font-noto font-semibold text-[rgb(143,143,143)]">
-            {/* Optional: Put the language toggle here for mobile */}
-            <div className="flex items-center space-x-1 text-[rgb(143,143,143)] hover:text-black cursor-pointer mb-2">
-              <span>EN</span>
+            {/* Language toggle for mobile */}
+            <div
+              className="flex items-center space-x-1 text-[rgb(143,143,143)] hover:text-black cursor-pointer mb-2"
+              onClick={toggleLang}
+            >
+              <span>{t.languageLabel}</span>
               <ChevronDownIcon className="w-4 h-4" />
             </div>
 
             <li>
               <Link
-                href="#home"
+                href="/#home"
                 scroll={false}
                 className="hover:text-black"
                 onClick={() => setIsOpen(false)}
               >
-                Home
+                {t.menu.home}
               </Link>
             </li>
             <li>
               <Link
-                href="#biography"
+                href="/#biography"
                 scroll={false}
                 className="hover:text-black"
                 onClick={() => setIsOpen(false)}
               >
-                Biography
+                {t.menu.biography}
               </Link>
             </li>
             <li>
               <Link
-                href="#filmography"
+                href="/#filmography"
                 scroll={false}
                 className="hover:text-black"
                 onClick={() => setIsOpen(false)}
               >
-                Filmography
+                {t.menu.filmography}
               </Link>
             </li>
             <li>
               <Link
-                href="#gallery"
-                scroll={false}
+                href="/gallery"
                 className="hover:text-black"
                 onClick={() => setIsOpen(false)}
               >
-                Gallery
+                {t.menu.gallery}
               </Link>
             </li>
             <li>
               <Link
-                href="#press"
+                href="/#press"
                 scroll={false}
                 className="hover:text-black"
                 onClick={() => setIsOpen(false)}
               >
-                Press
+                {t.menu.press}
               </Link>
             </li>
             <li>
               <Link
-                href="#contact"
+                href="/#contact"
                 scroll={false}
                 className="hover:text-black"
                 onClick={() => setIsOpen(false)}
               >
-                Contact
+                {t.menu.contact}
               </Link>
             </li>
           </ul>

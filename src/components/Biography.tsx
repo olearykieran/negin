@@ -12,7 +12,7 @@ export default function Biography() {
           {/* This container can mimic that vertical "biography" text frame */}
           <div className="border border-white p-4 relative inline-block">
             <img
-              src="/images/neg-bw-1.jpg"
+              src="/images/new_b6.jpg"
               alt="Biography Pose"
               className="w-full h-auto"
             />

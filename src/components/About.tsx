@@ -10,7 +10,7 @@ export function About() {
       <p className="font-noto text-lg max-w-2xl mx-auto">
         I'm a professional model and actress with a passion for storytelling through
         visual art. This portfolio showcases my latest projects, collaborations, and a
-        glimpse into my work in fashion, film, and beyond.
+        glimpse into my work in fashion, film, and beyond. 
       </p>
     </section>
   );
