@@ -20,8 +20,8 @@ export default function GallerySection() {
     >
       <div className="absolute inset-0 bg-black bg-opacity-40" />
       <div className="relative z-10 text-white text-center">
-        <Link 
-          href="/gallery" 
+        <Link
+          href="/gallery"
           className="
             inline-block px-8 py-3 
             border border-white 

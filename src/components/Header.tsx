@@ -1,53 +1,39 @@
 // src/components/Header.tsx
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Link from "next/link";
 import { FaInstagram, FaTwitter, FaYoutube, FaBars, FaTimes } from "react-icons/fa";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import translations from "@/lib/translations";
+import { LanguageContext } from "@/context/LanguageContext";
 
 export default function Header() {
-  // Current language state. Defaults to English. Could also read from localStorage, etc.
-  const [lang, setLang] = useState<"en" | "fa">("en");
+  const { lang, toggleLang } = useContext(LanguageContext);
   const [isOpen, setIsOpen] = useState(false);
 
-  // Helper to switch between English and Farsi
-  const toggleLang = () => {
-    setLang((prev) => (prev === "en" ? "fa" : "en"));
-  };
-
-  const t = translations[lang]; // shorthand
+  const t = translations[lang as keyof typeof translations]; // shorthand
 
   return (
     <header className="fixed top-0 w-full z-50 bg-[rgb(220,220,220)] shadow-sm">
-      <nav className="container mx-auto flex items-center justify-between py-16 px-6">
+      <nav className="container mx-auto flex items-center justify-between py-16 px-6 relative">
         {/* Left: Social icons */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 z-10">
           <a
-            href="https://instagram.com/"
+            href="https://instagram.com/neginpoure"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[rgb(143,143,143)] hover:text-black"
           >
             <FaInstagram size={20} />
           </a>
-          <a
-            href="https://twitter.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[rgb(143,143,143)] hover:text-black"
-          >
-            <FaTwitter size={20} />
-          </a>
-          <a
-            href="https://youtube.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[rgb(143,143,143)] hover:text-black"
-          >
-            <FaYoutube size={20} />
-          </a>
+        </div>
+
+        {/* Center: NP Logo (Mobile Only) - Using fixed width and text-center */}
+        <div className="md:hidden absolute w-full left-0 top-1/2 -translate-y-1/2 text-center pointer-events-none">
+          <span className="font-satoshi text-[rgb(143,143,143)] text-2xl font-bold inline-block">
+            NP
+          </span>
         </div>
 
         {/* Center Nav (Desktop Only) */}
@@ -63,7 +49,7 @@ export default function Header() {
             </Link>
           </li>
           <li>
-            <Link href="/#filmography" scroll={false} className="hover:text-black">
+            <Link href="/filmography" className="hover:text-black">
               {t.menu.filmography}
             </Link>
           </li>
@@ -73,7 +59,7 @@ export default function Header() {
             </Link>
           </li>
           <li>
-            <Link href="/#press" scroll={false} className="hover:text-black">
+            <Link href="/press" className="hover:text-black">
               {t.menu.press}
             </Link>
           </li>
@@ -85,7 +71,7 @@ export default function Header() {
         </ul>
 
         {/* Right Side: Language Toggle (Desktop) or Hamburger (Mobile) */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 z-10">
           {/* Language toggle on md+ screens */}
           <div
             className="hidden md:flex items-center space-x-1 text-[rgb(143,143,143)] hover:text-black cursor-pointer"
@@ -141,8 +127,7 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href="/#filmography"
-                scroll={false}
+                href="/filmography"
                 className="hover:text-black"
                 onClick={() => setIsOpen(false)}
               >
@@ -160,8 +145,7 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href="/#press"
-                scroll={false}
+                href="/press"
                 className="hover:text-black"
                 onClick={() => setIsOpen(false)}
               >

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
@@ -9,6 +9,8 @@ import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import "yet-another-react-lightbox/plugins/captions.css";
+import { LanguageContext } from "@/context/LanguageContext";
+import translations from "@/lib/translations";
 
 interface Photo {
   src: string;
@@ -21,6 +23,9 @@ interface GalleryProps {
 }
 
 export default function Gallery({ standalone = true }: GalleryProps) {
+  const { lang } = useContext(LanguageContext);
+  const t = translations[lang as keyof typeof translations];
+  
   const [photos, setPhotos] = useState<Photo[]>([]);
   const [index, setIndex] = useState(-1);
   const [loading, setLoading] = useState(true);
@@ -67,11 +72,17 @@ export default function Gallery({ standalone = true }: GalleryProps) {
 
   return (
     <>
-      <section className={`py-16 bg-black ${standalone ? 'pt-48' : ''}`}>
-        <div className="container mx-auto px-4">
+      <section 
+        className={`relative w-full min-h-[80vh] ${standalone ? 'pt-40' : ''}`}
+        style={{
+          background: 'linear-gradient(to bottom, #1a1a1a, #000000)'
+        }}
+      >
+        <div className="container mx-auto px-4 py-16">
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-light text-white mb-4">Gallery</h1>
-            <div className="w-16 h-0.5 bg-white mx-auto"></div>
+            <div className="border border-white px-8 py-2 inline-block mb-8">
+              <h1 className="text-3xl font-noto uppercase text-white">{t.gallery.title}</h1>
+            </div>
           </div>
 
           {loading ? (
