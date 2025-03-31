@@ -9,7 +9,8 @@ export default function Hero() {
       id="home"
       className="
         relative w-full h-screen 
-        bg-fixed bg-cover bg-no-repeat
+        bg-cover bg-no-repeat bg-center
+        md:bg-fixed
         flex items-center justify-center
       "
       style={{
@@ -20,15 +21,15 @@ export default function Hero() {
            or low the image starts.
         */
         backgroundImage: "url('/images/new_b3.jpg')",
-        backgroundPosition: "center 20%",
+        backgroundPosition: "center",
       }}
     >
       <div className="absolute inset-0 bg-black bg-opacity-30" />
 
       <div className="relative z-10 text-white text-center">
-        <h1 className="text-7xl font-satoshi mb-4 leading-tight">
+        <h1 className="text-5xl md:text-7xl font-satoshi mb-4 leading-tight">
           <span className="block letter-space">Negin Poure</span>
-          <span className="block text-5xl mt-2">نگین پور</span>
+          <span className="block text-3xl md:text-5xl mt-2">نگین پور</span>
         </h1>
 
         <p className="text-sm font-light italic leading-snug">

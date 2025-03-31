@@ -9,13 +9,14 @@ export default function GallerySection() {
     <section
       id="gallery"
       className="
-        relative w-full h-[60vh] 
+        relative w-full min-h-[400px] h-[60vh] 
         bg-center bg-cover bg-no-repeat 
-        bg-fixed
+        md:bg-fixed
         flex items-center justify-center
       "
       style={{
         backgroundImage: "url('/images/new_b1.jpg')",
+        backgroundPosition: "center",
       }}
     >
       <div className="absolute inset-0 bg-black bg-opacity-40" />
@@ -23,7 +24,7 @@ export default function GallerySection() {
         <Link
           href="/gallery"
           className="
-            inline-block px-8 py-3 
+            inline-block px-6 md:px-8 py-2 md:py-3 
             border border-white 
             text-white hover:bg-white hover:text-black 
             transition-colors duration-300

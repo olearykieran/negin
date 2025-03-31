@@ -3,6 +3,7 @@
 
 import React, { useState, useContext } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { FaInstagram, FaTwitter, FaYoutube, FaBars, FaTimes } from "react-icons/fa";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import translations from "@/lib/translations";
@@ -11,8 +12,22 @@ import { LanguageContext } from "@/context/LanguageContext";
 export default function Header() {
   const { lang, toggleLang } = useContext(LanguageContext);
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   const t = translations[lang as keyof typeof translations]; // shorthand
+
+  const scrollToSection = (sectionId: string) => {
+    // If we're not on the homepage, navigate there first
+    if (pathname !== "/") {
+      window.location.href = `/#${sectionId}`;
+    } else {
+      // If we're already on the homepage, just scroll
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
 
   return (
     <header className="fixed top-0 w-full z-50 bg-[rgb(220,220,220)] shadow-sm">
@@ -39,14 +54,17 @@ export default function Header() {
         {/* Center Nav (Desktop Only) */}
         <ul className="hidden md:flex items-center space-x-8 font-noto font-semibold text-black">
           <li>
-            <Link href="/#home" scroll={false} className="hover:text-black">
+            <button onClick={() => scrollToSection("home")} className="hover:text-black">
               {t.menu.home}
-            </Link>
+            </button>
           </li>
           <li>
-            <Link href="/#biography" scroll={false} className="hover:text-black">
+            <button
+              onClick={() => scrollToSection("biography")}
+              className="hover:text-black"
+            >
               {t.menu.biography}
-            </Link>
+            </button>
           </li>
           <li>
             <Link href="/filmography" className="hover:text-black">
@@ -64,9 +82,12 @@ export default function Header() {
             </Link>
           </li>
           <li>
-            <Link href="/#contact" scroll={false} className="hover:text-black">
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="hover:text-black"
+            >
               {t.menu.contact}
-            </Link>
+            </button>
           </li>
         </ul>
 
@@ -106,24 +127,26 @@ export default function Header() {
             </div>
 
             <li>
-              <Link
-                href="/#home"
-                scroll={false}
+              <button
+                onClick={() => {
+                  scrollToSection("home");
+                  setIsOpen(false);
+                }}
                 className="hover:text-black"
-                onClick={() => setIsOpen(false)}
               >
                 {t.menu.home}
-              </Link>
+              </button>
             </li>
             <li>
-              <Link
-                href="/#biography"
-                scroll={false}
+              <button
+                onClick={() => {
+                  scrollToSection("biography");
+                  setIsOpen(false);
+                }}
                 className="hover:text-black"
-                onClick={() => setIsOpen(false)}
               >
                 {t.menu.biography}
-              </Link>
+              </button>
             </li>
             <li>
               <Link
@@ -153,14 +176,15 @@ export default function Header() {
               </Link>
             </li>
             <li>
-              <Link
-                href="/#contact"
-                scroll={false}
+              <button
+                onClick={() => {
+                  scrollToSection("contact");
+                  setIsOpen(false);
+                }}
                 className="hover:text-black"
-                onClick={() => setIsOpen(false)}
               >
                 {t.menu.contact}
-              </Link>
+              </button>
             </li>
           </ul>
         </div>
