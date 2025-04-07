@@ -114,7 +114,7 @@ export default function Gallery({ standalone = true }: GalleryProps) {
 
               {/* Credits section */}
               <div className="mt-12 text-center text-white/70">
-                <p className="text-sm">
+                <p className="text-sm mb-2">
                   Photography by{" "}
                   <a
                     href="https://instagram.com/coreyhayesphotos"
@@ -123,6 +123,17 @@ export default function Gallery({ standalone = true }: GalleryProps) {
                     className="hover:text-white transition-colors duration-300 underline"
                   >
                     @coreyhayesphotos
+                  </a>
+                </p>
+                <p className="text-sm">
+                  Additional photography by{" "}
+                  <a
+                    href="https://www.instagram.com/bianca.victoria.ny?igsh=aXM2eXA2eHQ4aXZo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white transition-colors duration-300 underline"
+                  >
+                    @bianca.victoria.ny
                   </a>
                 </p>
               </div>
