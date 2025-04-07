@@ -25,7 +25,7 @@ interface GalleryProps {
 export default function Gallery({ standalone = true }: GalleryProps) {
   const { lang } = useContext(LanguageContext);
   const t = translations[lang as keyof typeof translations];
-  
+
   const [photos, setPhotos] = useState<Photo[]>([]);
   const [index, setIndex] = useState(-1);
   const [loading, setLoading] = useState(true);
@@ -33,7 +33,7 @@ export default function Gallery({ standalone = true }: GalleryProps) {
   useEffect(() => {
     const loadPhotos = () => {
       setLoading(true);
-      
+
       // Define all the image paths we want to include
       const imagePaths = [
         // new_b series
@@ -60,7 +60,7 @@ export default function Gallery({ standalone = true }: GalleryProps) {
       // Create the photos array
       const loadedPhotos = imagePaths.map((path) => ({
         src: path,
-        title: path.split('/').pop()?.replace('.jpg', ''),
+        title: path.split("/").pop()?.replace(".jpg", ""),
       }));
 
       setPhotos(loadedPhotos);
@@ -72,16 +72,18 @@ export default function Gallery({ standalone = true }: GalleryProps) {
 
   return (
     <>
-      <section 
-        className={`relative w-full min-h-[80vh] ${standalone ? 'pt-40' : ''}`}
+      <section
+        className={`relative w-full min-h-[80vh] ${standalone ? "pt-40" : ""}`}
         style={{
-          background: 'linear-gradient(to bottom, #1a1a1a, #000000)'
+          background: "linear-gradient(to bottom, #1a1a1a, #000000)",
         }}
       >
         <div className="container mx-auto px-4 py-16">
           <div className="text-center mb-12">
             <div className="border border-white px-8 py-2 inline-block mb-8">
-              <h1 className="text-3xl font-noto uppercase text-white">{t.gallery.title}</h1>
+              <h1 className="text-3xl font-noto uppercase text-white">
+                {t.gallery.title}
+              </h1>
             </div>
           </div>
 
@@ -93,21 +95,36 @@ export default function Gallery({ standalone = true }: GalleryProps) {
             <div className="max-w-7xl mx-auto">
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {photos.map((photo, i) => (
-                  <div 
-                    key={photo.src} 
+                  <div
+                    key={photo.src}
                     className="aspect-square overflow-hidden cursor-pointer group"
                     onClick={() => setIndex(i)}
                   >
                     <div className="w-full h-full relative">
                       <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 z-10"></div>
-                      <img 
-                        src={photo.src} 
-                        alt={photo.title || 'Gallery image'} 
+                      <img
+                        src={photo.src}
+                        alt={photo.title || "Gallery image"}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
                   </div>
                 ))}
+              </div>
+
+              {/* Credits section */}
+              <div className="mt-12 text-center text-white/70">
+                <p className="text-sm">
+                  Photography by{" "}
+                  <a
+                    href="https://instagram.com/coreyhayesphotos"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white transition-colors duration-300 underline"
+                  >
+                    @coreyhayesphotos
+                  </a>
+                </p>
               </div>
             </div>
           )}

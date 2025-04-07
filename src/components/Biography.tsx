@@ -31,12 +31,14 @@ export default function Biography() {
         {/* Right side: text content */}
         <div className="md:w-1/2 text-left">
           <h2 className="text-2xl font-noto font-bold mb-4">{t.biography.heading}</h2>
-          <p className="text-md leading-relaxed mb-4">
-            {t.biography.content}
-          </p>
-          <button className="px-6 py-2 border border-white text-white hover:bg-white hover:text-black transition">
+          <p className="text-md leading-relaxed mb-4">{t.biography.content}</p>
+          <a
+            href="/negin_poure_resume.pdf"
+            download
+            className="px-6 py-2 border border-white text-white hover:bg-white hover:text-black transition inline-block"
+          >
             {t.biography.awardsButton}
-          </button>
+          </a>
         </div>
       </div>
     </section>

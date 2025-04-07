@@ -20,8 +20,8 @@ const translations = {
       title: "Biography",
       heading: "International Artist with Global Perspective",
       content:
-        "Born in Iran and raised in India, Negin Poure brings a rich multicultural perspective to her craft. Her formative years across diverse cultural landscapes, including time spent living in Turkey, have shaped her unique artistic vision. A graduate of the prestigious American Academy of Dramatic Arts, Negin has cultivated a versatile performance style that seamlessly bridges Eastern and Western artistic traditions. Her international background and formal training have equipped her with exceptional adaptability and nuanced character development skills, making her a compelling presence both on screen and stage.",
-      awardsButton: "Awards",
+        "Negin Poure is an Iranian-born, actress, model, and writer based in New York City. Her journey into the world of acting began when she moved to New York to pursue her passion for performance. She studied at the prestigious American Academy of Dramatic Arts, where she earned her Associate's degree in Theater Studies. Negin is a proud member of the Actress Society with a foundation in both Stanislavsky and Meisner techniques. She has been actively involved in both film and theater since the start of her career. When she's not in front of the camera or on stage, she's often immersed in one of her quieter passions; writing poetry or discovering the work of poets from around the world, and sketching. These moments of creativity beyond the spotlight are what keeps her grounded and continually inspired.",
+      awardsButton: "Download Resume",
     },
     gallery: {
       title: "Gallery",
@@ -73,8 +73,8 @@ const translations = {
       title: "زندگینامه",
       heading: "هنرمند بین‌المللی با دیدگاه جهانی",
       content:
-        "نگین پور متولد ایران و بزرگ شده در هند، دیدگاه چند فرهنگی غنی را به هنر خود می‌آورد. سال‌های شکل‌گیری او در مناظر فرهنگی متنوع، از جمله زمان زندگی در ترکیه، دیدگاه هنری منحصر به فرد او را شکل داده است. فارغ‌التحصیل آکادمی معتبر هنرهای نمایشی آمریکا، نگین سبک اجرای همه‌جانبه‌ای را پرورش داده که به طور یکپارچه سنت‌های هنری شرقی و غربی را پیوند می‌دهد. پیشینه بین‌المللی و آموزش رسمی او، او را با انطباق‌پذیری استثنایی و مهارت‌های توسعه شخصیت ظریف مجهز کرده است که او را به حضوری جذاب هم در صفحه نمایش و هم در صحنه تبدیل می‌کند.",
-      awardsButton: "جوایز",
+        "نگین پور، بازیگر، مدل و نویسنده متولد ایران است که در نیویورک زندگی می‌کند. سفر او در دنیای بازیگری زمانی آغاز شد که برای دنبال کردن علاقه‌اش به هنر نمایش به نیویورک نقل مکان کرد. او در آکادمی معتبر هنرهای نمایشی آمریکا تحصیل کرد و مدرک کاردانی خود را در رشته مطالعات تئاتر دریافت کرد. نگین عضو افتخاری انجمن بازیگران است و در هر دو تکنیک استانیسلاوسکی و مایزنر تخصص دارد. او از ابتدای حرفه خود در هر دو زمینه فیلم و تئاتر فعال بوده است. وقتی جلوی دوربین یا روی صحنه نیست، اغلب غرق در یکی از علایق آرام‌تر خود است؛ نوشتن شعر یا کشف آثار شاعران از سراسر جهان، و طراحی. این لحظات خلاقیت فراتر از نورافکن‌ها، چیزی است که او را متعادل و مداوم الهام‌بخش نگه می‌دارد.",
+      awardsButton: "دانلود رزومه",
     },
     gallery: {
       title: "گالری",

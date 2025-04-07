@@ -109,10 +109,10 @@ export default function ContactSection() {
         <p>
           {t.contact.directEmail}{" "}
           <a
-            href="mailto:neginzpurse@gmail.com"
+            href="mailto:neginzpoure@gmail.com"
             className="underline hover:text-white transition"
           >
-            neginzpurse@gmail.com
+            neginzpoure@gmail.com
           </a>
         </p>
       </div>
