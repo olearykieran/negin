@@ -15,7 +15,7 @@ export default function Biography() {
         {/* Left side: big vertical text + image */}
         <div className="md:w-1/2 mb-8 md:mb-0 md:pr-8 relative">
           {/* This container can mimic that vertical "biography" text frame */}
-          <div className="border border-white p-4 relative inline-block">
+          <div className="p-4 relative inline-block">
             <img
               src="/images/new_b6.jpg"
               alt="Biography Pose"
@@ -30,7 +30,7 @@ export default function Biography() {
 
         {/* Right side: text content */}
         <div className="md:w-1/2 text-left">
-          <h2 className="text-2xl font-noto font-bold mb-4">{t.biography.heading}</h2>
+          <h2 className="text-5xl md:text-6xl font-bold font-noto mb-6">I AM</h2>
           <p className="text-md leading-relaxed mb-4">{t.biography.content}</p>
           <a
             href="/NeginPoure_Resume%20.pdf"

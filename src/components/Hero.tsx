@@ -33,8 +33,8 @@ export default function Hero() {
         </h1>
 
         <p className="text-sm font-light italic leading-snug">
-          <span className="block">Actress &amp; Model</span>
-          <span className="block mt-1">بازیگر و مدل</span>
+          <span className="block">Writer, Actress &amp; Model</span>
+          <span className="block mt-1">نویسنده، بازیگر و مدل</span>
         </p>
       </div>
     </section>

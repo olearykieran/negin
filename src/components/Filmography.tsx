@@ -12,7 +12,7 @@ export default function Filmography() {
   return (
     <section
       id="filmography"
-      className="relative w-full min-h-[80vh] bg-center bg-cover bg-no-repeat flex items-center justify-center pt-40"
+      className="relative w-full min-h-[80vh] bg-center bg-cover bg-no-repeat pt-40"
       style={{
         backgroundImage: "url('/images/new_c3.jpg')",
       }}
@@ -20,48 +20,122 @@ export default function Filmography() {
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-60"></div>
 
-      <div className="relative z-10 text-white text-center max-w-4xl mx-auto px-4 py-16">
-        <div className="border border-white px-8 py-2 inline-block mb-8">
+      <div className="relative z-10 text-white text-center max-w-6xl mx-auto px-4 py-16">
+        <div className="border border-white px-8 py-2 inline-block mb-12">
           <h2 className="text-3xl font-noto uppercase">{t.filmography.title}</h2>
         </div>
 
-        <div className="mt-8">
-          <h3 className="text-2xl font-light mb-4">{t.filmography.comingSoon}</h3>
-          <p className="text-lg text-gray-300 mb-8">{t.filmography.description}</p>
+        {/* Projects Section */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-light mb-8 uppercase tracking-wide">Projects</h3>
 
-          {/* Placeholder film projects */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            {/* Project 1 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Studio Ghost */}
             <div className="bg-black bg-opacity-50 border border-gray-700 p-6 hover:border-white transition-all">
-              <div className="h-40 bg-gray-800 mb-4 flex items-center justify-center">
-                <span className="text-gray-500">Coming Soon</span>
+              <div className="h-48 mb-4 overflow-hidden">
+                <img 
+                  src="/images/studio-ghost.jpeg" 
+                  alt="Studio Ghost"
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <h4 className="text-xl mb-2">Project Title</h4>
-              <p className="text-sm text-gray-400">Role: Lead</p>
-              <p className="text-sm text-gray-400">Director: TBA</p>
-              <p className="text-sm text-gray-400">Year: 2025</p>
+              <h4 className="text-xl mb-2 font-semibold">Studio Ghost</h4>
+              <p className="text-sm text-gray-300">Role: Lead (Ghost)</p>
+              <p className="text-sm text-gray-300">Writer/Director: Vic Wu</p>
+              <p className="text-sm text-gray-300">Year: 2024</p>
+              <p className="text-sm text-gray-300 mt-2">Short Film</p>
             </div>
 
-            {/* Project 2 */}
+            {/* Leftovers */}
             <div className="bg-black bg-opacity-50 border border-gray-700 p-6 hover:border-white transition-all">
-              <div className="h-40 bg-gray-800 mb-4 flex items-center justify-center">
-                <span className="text-gray-500">Coming Soon</span>
+              <div className="h-48 mb-4 overflow-hidden">
+                <img 
+                  src="/images/leftovers.jpeg" 
+                  alt="Leftovers"
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <h4 className="text-xl mb-2">Project Title</h4>
-              <p className="text-sm text-gray-400">Role: Supporting</p>
-              <p className="text-sm text-gray-400">Director: TBA</p>
-              <p className="text-sm text-gray-400">Year: 2025</p>
+              <h4 className="text-xl mb-2 font-semibold">Leftovers</h4>
+              <p className="text-sm text-gray-300">Role: Lead</p>
+              <p className="text-sm text-gray-300">Writer/Director: Negin Poure</p>
+              <p className="text-sm text-gray-300">Year: 2024</p>
+              <p className="text-sm text-gray-300 mt-2">Short Film</p>
             </div>
 
-            {/* Project 3 */}
+            {/* Status Quo */}
             <div className="bg-black bg-opacity-50 border border-gray-700 p-6 hover:border-white transition-all">
-              <div className="h-40 bg-gray-800 mb-4 flex items-center justify-center">
-                <span className="text-gray-500">Coming Soon</span>
+              <div className="h-48 mb-4 overflow-hidden">
+                <img 
+                  src="/images/status-quo.jpg" 
+                  alt="Status Quo"
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <h4 className="text-xl mb-2">Project Title</h4>
-              <p className="text-sm text-gray-400">Role: Lead</p>
-              <p className="text-sm text-gray-400">Director: TBA</p>
-              <p className="text-sm text-gray-400">Year: 2026</p>
+              <h4 className="text-xl mb-2 font-semibold">Status Quo</h4>
+              <p className="text-sm text-gray-300">Role: Multiple Roles</p>
+              <p className="text-sm text-gray-300">Writer: Maja Zade</p>
+              <p className="text-sm text-gray-300">Director: Dmitry Troyanovsky</p>
+              <p className="text-sm text-gray-300">Year: 2024</p>
+              <p className="text-sm text-gray-300 mt-2">Theater Play</p>
+            </div>
+
+            {/* A Midsummer Night's Dream */}
+            <div className="bg-black bg-opacity-50 border border-gray-700 p-6 hover:border-white transition-all">
+              <div className="h-48 mb-4 overflow-hidden">
+                <img 
+                  src="/images/midsummer.jpg" 
+                  alt="A Midsummer Night's Dream"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h4 className="text-xl mb-2 font-semibold">A Midsummer Night's Dream</h4>
+              <p className="text-sm text-gray-300">Role: Helena</p>
+              <p className="text-sm text-gray-300">Writer: William Shakespeare</p>
+              <p className="text-sm text-gray-300">Director: Ipsen Santos</p>
+              <p className="text-sm text-gray-300">Year: 2024</p>
+              <p className="text-sm text-gray-300 mt-2">Theater Play</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Future Projects Section */}
+        <div>
+          <h3 className="text-2xl font-light mb-8 uppercase tracking-wide">
+            Coming Soon
+          </h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+            {/* Flighty - Short Film */}
+            <div className="bg-black bg-opacity-50 border border-gray-700 p-6 hover:border-white transition-all">
+              <div className="h-48 mb-4 overflow-hidden">
+                <img 
+                  src="/images/flighty.jpeg" 
+                  alt="Flighty Short Film"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h4 className="text-xl mb-2 font-semibold">Flighty</h4>
+              <p className="text-sm text-gray-300">Role: Main Actress</p>
+              <p className="text-sm text-gray-300">Writer/Director: Giovanni Staricco</p>
+              <p className="text-sm text-gray-300">Year: 2025</p>
+              <p className="text-sm text-gray-300 mt-2">Short Film</p>
+            </div>
+
+            {/* Stain - Play */}
+            <div className="bg-black bg-opacity-50 border border-gray-700 p-6 hover:border-white transition-all">
+              <div className="h-48 mb-4 overflow-hidden">
+                <img 
+                  src="/images/stain.JPG" 
+                  alt="Stain"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h4 className="text-xl mb-2 font-semibold">Stain</h4>
+              <p className="text-sm text-gray-300">Role: Lead (Melody)</p>
+              <p className="text-sm text-gray-300">Writers: Negin Poure & Hera Gunes Barlowe</p>
+              <p className="text-sm text-gray-300">Director: TBD</p>
+              <p className="text-sm text-gray-300">Year: 2025</p>
+              <p className="text-sm text-gray-300 mt-2">Theater Play</p>
             </div>
           </div>
         </div>

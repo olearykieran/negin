@@ -14,7 +14,7 @@ const translations = {
     // Example text for biography, hero, contact, etc.
     hero: {
       title: "Negin Poure",
-      subtitle: "Actress & Model",
+      subtitle: "Writer, Actress & Model",
     },
     biography: {
       title: "Biography",
