@@ -137,6 +137,38 @@ export default function Gallery({ standalone = true }: GalleryProps) {
                   </a>
                 </p>
               </div>
+
+              {/* Collage section */}
+              <div className="mt-16">
+                <div className="grid grid-cols-4 gap-0">
+                  {/* First row */}
+                  <div className="aspect-square">
+                    <img src="/images/1.JPG" alt="Collage 1" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="aspect-square">
+                    <img src="/images/2.JPG" alt="Collage 2" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="aspect-square">
+                    <img src="/images/3.jpg" alt="Collage 3" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="aspect-square">
+                    <img src="/images/4.jpg" alt="Collage 4" className="w-full h-full object-cover" />
+                  </div>
+                  {/* Second row */}
+                  <div className="aspect-square">
+                    <img src="/images/5.jpg" alt="Collage 5" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="aspect-square">
+                    <img src="/images/6.jpg" alt="Collage 6" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="aspect-square">
+                    <img src="/images/7.jpg" alt="Collage 7" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="aspect-square">
+                    <img src="/images/8.jpg" alt="Collage 8" className="w-full h-full object-cover" />
+                  </div>
+                </div>
+              </div>
             </div>
           )}
         </div>

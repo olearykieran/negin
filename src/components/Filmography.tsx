@@ -27,19 +27,19 @@ export default function Filmography() {
 
         {/* Projects Section */}
         <div className="mb-16">
-          <h3 className="text-2xl font-light mb-8 uppercase tracking-wide">Projects</h3>
+          <h3 className="text-2xl font-light mb-8 uppercase tracking-wide">Current</h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Studio Ghost */}
             <div className="bg-black bg-opacity-50 border border-gray-700 p-6 hover:border-white transition-all">
               <div className="h-48 mb-4 overflow-hidden">
-                <img 
-                  src="/images/studio-ghost.jpeg" 
+                <img
+                  src="/images/studio-ghost.jpeg"
                   alt="Studio Ghost"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h4 className="text-xl mb-2 font-semibold">Studio Ghost</h4>
+              <h4 className="text-xl mb-2 font-semibold">The Studio Ghost</h4>
               <p className="text-sm text-gray-300">Role: Lead (Ghost)</p>
               <p className="text-sm text-gray-300">Writer/Director: Vic Wu</p>
               <p className="text-sm text-gray-300">Year: 2024</p>
@@ -49,8 +49,8 @@ export default function Filmography() {
             {/* Leftovers */}
             <div className="bg-black bg-opacity-50 border border-gray-700 p-6 hover:border-white transition-all">
               <div className="h-48 mb-4 overflow-hidden">
-                <img 
-                  src="/images/leftovers.jpeg" 
+                <img
+                  src="/images/leftovers.jpeg"
                   alt="Leftovers"
                   className="w-full h-full object-cover"
                 />
@@ -65,8 +65,8 @@ export default function Filmography() {
             {/* Status Quo */}
             <div className="bg-black bg-opacity-50 border border-gray-700 p-6 hover:border-white transition-all">
               <div className="h-48 mb-4 overflow-hidden">
-                <img 
-                  src="/images/status-quo.jpg" 
+                <img
+                  src="/images/status-quo.jpg"
                   alt="Status Quo"
                   className="w-full h-full object-cover"
                 />
@@ -82,8 +82,8 @@ export default function Filmography() {
             {/* A Midsummer Night's Dream */}
             <div className="bg-black bg-opacity-50 border border-gray-700 p-6 hover:border-white transition-all">
               <div className="h-48 mb-4 overflow-hidden">
-                <img 
-                  src="/images/midsummer.jpg" 
+                <img
+                  src="/images/midsummer.jpg"
                   alt="A Midsummer Night's Dream"
                   className="w-full h-full object-cover"
                 />
@@ -108,8 +108,8 @@ export default function Filmography() {
             {/* Flighty - Short Film */}
             <div className="bg-black bg-opacity-50 border border-gray-700 p-6 hover:border-white transition-all">
               <div className="h-48 mb-4 overflow-hidden">
-                <img 
-                  src="/images/flighty.jpeg" 
+                <img
+                  src="/images/flighty.jpeg"
                   alt="Flighty Short Film"
                   className="w-full h-full object-cover"
                 />
@@ -124,15 +124,17 @@ export default function Filmography() {
             {/* Stain - Play */}
             <div className="bg-black bg-opacity-50 border border-gray-700 p-6 hover:border-white transition-all">
               <div className="h-48 mb-4 overflow-hidden">
-                <img 
-                  src="/images/stain.JPG" 
+                <img
+                  src="/images/stain.JPG"
                   alt="Stain"
                   className="w-full h-full object-cover"
                 />
               </div>
               <h4 className="text-xl mb-2 font-semibold">Stain</h4>
               <p className="text-sm text-gray-300">Role: Lead (Melody)</p>
-              <p className="text-sm text-gray-300">Writers: Negin Poure & Hera Gunes Barlowe</p>
+              <p className="text-sm text-gray-300">
+                Writers: Negin Poure & Hera Gunes Barlowe
+              </p>
               <p className="text-sm text-gray-300">Director: TBD</p>
               <p className="text-sm text-gray-300">Year: 2025</p>
               <p className="text-sm text-gray-300 mt-2">Theater Play</p>

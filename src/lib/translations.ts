@@ -5,7 +5,7 @@ const translations = {
     menu: {
       home: "Home",
       biography: "Biography",
-      filmography: "Filmography",
+      filmography: "Projects",
       gallery: "Gallery",
       press: "Press",
       contact: "Contact",
@@ -27,7 +27,7 @@ const translations = {
       title: "Gallery",
     },
     filmography: {
-      title: "Filmography",
+      title: "Projects",
       comingSoon: "Coming Soon",
       description:
         "Exciting projects in development. Check back for updates on Negin's latest film and television work.",
@@ -35,6 +35,7 @@ const translations = {
     press: {
       title: "Press",
       canvasRebel: "Canvas Rebel Interview",
+      boldJourney: "Bold Journey Interview",
       readMore: "Read More",
       description:
         "Discover Negin's journey, inspirations, and artistic vision through interviews and features.",
@@ -59,7 +60,7 @@ const translations = {
     menu: {
       home: "خانه",
       biography: "زندگینامه",
-      filmography: "فیلم‌شناسی",
+      filmography: "پروژه‌ها",
       gallery: "گالری",
       press: "رسانه",
       contact: "تماس",
@@ -80,7 +81,7 @@ const translations = {
       title: "گالری",
     },
     filmography: {
-      title: "فیلم‌شناسی",
+      title: "پروژه‌ها",
       comingSoon: "به زودی",
       description:
         "پروژه‌های هیجان‌انگیز در حال توسعه. برای به‌روزرسانی‌های آخرین کارهای سینمایی و تلویزیونی نگین، دوباره بررسی کنید.",
@@ -88,6 +89,7 @@ const translations = {
     press: {
       title: "رسانه",
       canvasRebel: "مصاحبه با کنواس ربل",
+      boldJourney: "مصاحبه با بولد جرنی",
       readMore: "بیشتر بخوانید",
       description:
         "سفر، الهام‌ها و دیدگاه هنری نگین را از طریق مصاحبه‌ها و ویژگی‌ها کشف کنید.",

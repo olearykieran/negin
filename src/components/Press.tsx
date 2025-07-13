@@ -26,29 +26,47 @@ export default function Press() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
           {/* Canvas Rebel Interview */}
-          <div className="bg-black bg-opacity-20 border border-gray-700 p-8 hover:border-white transition-all">
-            <h3 className="text-2xl mb-4">{t.press.canvasRebel}</h3>
-            <p className="text-gray-300 mb-6">
-              An in-depth conversation with Negin about her artistic journey, creative
-              process, and future aspirations.
-            </p>
-            <a
-              href="https://canvasrebel.com/meet-negin-poure/?fbclid=PAZXh0bgNhZW0CMTEAAaboJjuVS8l46cg9mjmiPDEyBEZhoNBB3cgSvmT"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-6 py-2 border border-white text-white hover:bg-white hover:text-black transition"
-            >
-              {t.press.readMore}
-            </a>
+          <div className="bg-black bg-opacity-20 border border-gray-700 overflow-hidden hover:border-white transition-all">
+            <div className="h-48 overflow-hidden">
+              <img src="/images/canvas-rebel.png" alt="Canvas Rebel Interview" className="w-full h-full object-cover" />
+            </div>
+            <div className="p-8">
+              <h3 className="text-2xl mb-4">{t.press.canvasRebel}</h3>
+              <p className="text-gray-300 mb-6">
+                An in-depth conversation with Negin about her artistic journey, creative
+                process, and future aspirations.
+              </p>
+              <a
+                href="https://canvasrebel.com/meet-negin-poure/?fbclid=PAZXh0bgNhZW0CMTEAAaboJjuVS8l46cg9mjmiPDEyBEZhoNBB3cgSvmT"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-6 py-2 border border-white text-white hover:bg-white hover:text-black transition"
+              >
+                {t.press.readMore}
+              </a>
+            </div>
           </div>
 
-          {/* Placeholder for future press */}
-          <div className="bg-black bg-opacity-20 border border-gray-700 p-8">
-            <h3 className="text-2xl mb-4">Coming Soon</h3>
-            <p className="text-gray-300 mb-6">
-              More press features and interviews will be added here as they become
-              available.
-            </p>
+          {/* Bold Journey Interview */}
+          <div className="bg-black bg-opacity-20 border border-gray-700 overflow-hidden hover:border-white transition-all">
+            <div className="h-48 overflow-hidden">
+              <img src="/images/bold-journey.png" alt="Bold Journey Interview" className="w-full h-full object-cover" />
+            </div>
+            <div className="p-8">
+              <h3 className="text-2xl mb-4">{t.press.boldJourney}</h3>
+              <p className="text-gray-300 mb-6">
+                A feature on Negin's creative journey, exploring her unique perspective
+                as an artist and the experiences that shape her work.
+              </p>
+              <a
+                href="https://boldjourney.com/meet-negin-poure/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-6 py-2 border border-white text-white hover:bg-white hover:text-black transition"
+              >
+                {t.press.readMore}
+              </a>
+            </div>
           </div>
         </div>
       </div>
