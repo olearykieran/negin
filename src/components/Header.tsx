@@ -82,6 +82,11 @@ export default function Header() {
             </Link>
           </li>
           <li>
+            <Link href="/writing" className="hover:text-black">
+              {t.menu.writing || "Writing"}
+            </Link>
+          </li>
+          <li>
             <button
               onClick={() => scrollToSection("contact")}
               className="hover:text-black"
@@ -173,6 +178,15 @@ export default function Header() {
                 onClick={() => setIsOpen(false)}
               >
                 {t.menu.press}
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/writing"
+                className="hover:text-black"
+                onClick={() => setIsOpen(false)}
+              >
+                {t.menu.writing || "Writing"}
               </Link>
             </li>
             <li>

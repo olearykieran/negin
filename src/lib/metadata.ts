@@ -14,6 +14,7 @@ interface PageMetadata {
   filmography: MetadataConfig;
   gallery: MetadataConfig;
   press: MetadataConfig;
+  writing: MetadataConfig;
   contact: MetadataConfig;
 }
 
@@ -54,6 +55,13 @@ export const metadata: PageMetadata = {
     keywords: ['Negin Poure press', 'interviews', 'media coverage', 'articles', 'Canvas Rebel'],
     ogImage: `${baseUrl}/images/new_c3.jpg`,
     ogType: 'article',
+  },
+  writing: {
+    title: 'Writing | Negin Poure',
+    description: 'Explore Negin Poure\'s creative writing works including theater plays and poetry collections.',
+    keywords: ['Negin Poure writing', 'poetry', 'playwright', 'theater', 'creative writing', 'Stain play'],
+    ogImage: `${baseUrl}/images/new_c1.jpg`,
+    ogType: 'website',
   },
   contact: {
     title: 'Contact | Negin Poure',

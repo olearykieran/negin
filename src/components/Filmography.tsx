@@ -25,79 +25,6 @@ export default function Filmography() {
           <h2 className="text-3xl font-noto uppercase">{t.filmography.title}</h2>
         </div>
 
-        {/* Projects Section */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-light mb-8 uppercase tracking-wide">Current</h3>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Studio Ghost */}
-            <div className="bg-black bg-opacity-50 border border-gray-700 p-6 hover:border-white transition-all">
-              <div className="h-48 mb-4 overflow-hidden">
-                <img
-                  src="/images/studio-ghost.jpeg"
-                  alt="Studio Ghost"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h4 className="text-xl mb-2 font-semibold">The Studio Ghost</h4>
-              <p className="text-sm text-gray-300">Role: Lead (Ghost)</p>
-              <p className="text-sm text-gray-300">Writer/Director: Vic Wu</p>
-              <p className="text-sm text-gray-300">Year: 2024</p>
-              <p className="text-sm text-gray-300 mt-2">Short Film</p>
-            </div>
-
-            {/* Leftovers */}
-            <div className="bg-black bg-opacity-50 border border-gray-700 p-6 hover:border-white transition-all">
-              <div className="h-48 mb-4 overflow-hidden">
-                <img
-                  src="/images/leftovers.jpeg"
-                  alt="Leftovers"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h4 className="text-xl mb-2 font-semibold">Leftovers</h4>
-              <p className="text-sm text-gray-300">Role: Lead</p>
-              <p className="text-sm text-gray-300">Writer/Director: Negin Poure</p>
-              <p className="text-sm text-gray-300">Year: 2024</p>
-              <p className="text-sm text-gray-300 mt-2">Short Film</p>
-            </div>
-
-            {/* Status Quo */}
-            <div className="bg-black bg-opacity-50 border border-gray-700 p-6 hover:border-white transition-all">
-              <div className="h-48 mb-4 overflow-hidden">
-                <img
-                  src="/images/status-quo.jpg"
-                  alt="Status Quo"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h4 className="text-xl mb-2 font-semibold">Status Quo</h4>
-              <p className="text-sm text-gray-300">Role: Multiple Roles</p>
-              <p className="text-sm text-gray-300">Writer: Maja Zade</p>
-              <p className="text-sm text-gray-300">Director: Dmitry Troyanovsky</p>
-              <p className="text-sm text-gray-300">Year: 2024</p>
-              <p className="text-sm text-gray-300 mt-2">Theater Play</p>
-            </div>
-
-            {/* A Midsummer Night's Dream */}
-            <div className="bg-black bg-opacity-50 border border-gray-700 p-6 hover:border-white transition-all">
-              <div className="h-48 mb-4 overflow-hidden">
-                <img
-                  src="/images/midsummer.jpg"
-                  alt="A Midsummer Night's Dream"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h4 className="text-xl mb-2 font-semibold">A Midsummer Night's Dream</h4>
-              <p className="text-sm text-gray-300">Role: Helena</p>
-              <p className="text-sm text-gray-300">Writer: William Shakespeare</p>
-              <p className="text-sm text-gray-300">Director: Ipsen Santos</p>
-              <p className="text-sm text-gray-300">Year: 2024</p>
-              <p className="text-sm text-gray-300 mt-2">Theater Play</p>
-            </div>
-          </div>
-        </div>
-
         {/* Future Projects Section */}
         <div>
           <h3 className="text-2xl font-light mb-8 uppercase tracking-wide">
@@ -115,7 +42,7 @@ export default function Filmography() {
                 />
               </div>
               <h4 className="text-xl mb-2 font-semibold">Flighty</h4>
-              <p className="text-sm text-gray-300">Role: Main Actress</p>
+              <p className="text-sm text-gray-300">Role: Sasha</p>
               <p className="text-sm text-gray-300">Writer/Director: Giovanni Staricco</p>
               <p className="text-sm text-gray-300">Year: 2025</p>
               <p className="text-sm text-gray-300 mt-2">Short Film</p>
@@ -131,7 +58,7 @@ export default function Filmography() {
                 />
               </div>
               <h4 className="text-xl mb-2 font-semibold">Stain</h4>
-              <p className="text-sm text-gray-300">Role: Lead (Melody)</p>
+              <p className="text-sm text-gray-300">Role: Melody</p>
               <p className="text-sm text-gray-300">
                 Writers: Negin Poure & Hera Gunes Barlowe
               </p>

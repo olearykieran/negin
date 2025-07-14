@@ -8,6 +8,7 @@ const translations = {
       filmography: "Projects",
       gallery: "Gallery",
       press: "Press",
+      writing: "Writing",
       contact: "Contact",
     },
     languageLabel: "EN",
@@ -40,6 +41,10 @@ const translations = {
       description:
         "Discover Negin's journey, inspirations, and artistic vision through interviews and features.",
     },
+    writing: {
+      title: "Writing",
+      description: "Explore Negin's creative writing works including theater plays and poetry.",
+    },
     contact: {
       heading: "Contact",
       placeholderName: "Name - Surname",
@@ -63,6 +68,7 @@ const translations = {
       filmography: "پروژه‌ها",
       gallery: "گالری",
       press: "رسانه",
+      writing: "نوشته‌ها",
       contact: "تماس",
     },
     languageLabel: "فا",
@@ -93,6 +99,10 @@ const translations = {
       readMore: "بیشتر بخوانید",
       description:
         "سفر، الهام‌ها و دیدگاه هنری نگین را از طریق مصاحبه‌ها و ویژگی‌ها کشف کنید.",
+    },
+    writing: {
+      title: "نوشته‌ها",
+      description: "آثار نوشتاری خلاقانه نگین را شامل نمایشنامه‌های تئاتر و شعر کاوش کنید.",
     },
     contact: {
       heading: "تماس",
