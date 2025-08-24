@@ -36,6 +36,13 @@ export default function Gallery({ standalone = true }: GalleryProps) {
 
       // Define all the image paths we want to include
       const imagePaths = [
+        // Latest photoshoot
+        "/images/neg-new.jpg",
+        "/images/neg-new1.jpg",
+        "/images/neg-new3.jpg",
+        "/images/neg-new4.jpg",
+        "/images/neg-new5.jpg",
+        "/images/neg-new6.jpg",
         // new_b series
         "/images/new_b1.jpg",
         "/images/new_b2.jpg",
