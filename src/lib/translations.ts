@@ -15,7 +15,7 @@ const translations = {
     // Example text for biography, hero, contact, etc.
     hero: {
       title: "Negin Poure",
-      subtitle: "Writer, Actress & Model",
+      subtitle: "Actress, Writer & Model",
     },
     biography: {
       title: "Biography",
@@ -43,7 +43,8 @@ const translations = {
     },
     writing: {
       title: "Writing",
-      description: "Explore Negin's creative writing works including theater plays and poetry.",
+      description:
+        "Explore Negin's creative writing works including theater plays and poetry.",
     },
     contact: {
       heading: "Contact",
@@ -102,7 +103,8 @@ const translations = {
     },
     writing: {
       title: "نوشته‌ها",
-      description: "آثار نوشتاری خلاقانه نگین را شامل نمایشنامه‌های تئاتر و شعر کاوش کنید.",
+      description:
+        "آثار نوشتاری خلاقانه نگین را شامل نمایشنامه‌های تئاتر و شعر کاوش کنید.",
     },
     contact: {
       heading: "تماس",

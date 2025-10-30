@@ -12,12 +12,16 @@ export default function Press() {
   return (
     <section
       id="press"
-      className="relative w-full min-h-[80vh] bg-[#2f2f2f] text-white flex items-center justify-center pt-40"
+      className="relative w-full min-h-[80vh] bg-center bg-cover bg-no-repeat text-white flex items-center justify-center pt-40"
+      style={{
+        backgroundImage: "url('/images/new-photos/IMG_8247.jpg')",
+      }}
     >
+      <div className="absolute inset-0 bg-black bg-opacity-60"></div>
       <div className="relative z-10 text-white text-center max-w-4xl mx-auto px-4 py-16">
         <div className="text-center mb-12">
           <div className="border border-white px-8 py-2 inline-block mb-8">
-            <h2 className="text-3xl font-noto uppercase">{t.press.title}</h2>
+            <h2 className="text-3xl font-canela uppercase">{t.press.title}</h2>
           </div>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto mt-6">
             {t.press.description}

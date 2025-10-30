@@ -9,8 +9,8 @@ export function Contact() {
       id="contact"
       className="py-16 px-4 bg-black text-white text-center flex flex-col items-center"
     >
-      <h2 className="text-3xl font-pinyon mb-6">Contact</h2>
-      <p className="font-noto text-lg max-w-xl">
+      <h2 className="text-3xl font-canela mb-6">Contact</h2>
+      <p className="font-canela text-lg max-w-xl">
         Interested in collaborating or just want to say hello? Feel free to email me or
         connect via social media.
       </p>

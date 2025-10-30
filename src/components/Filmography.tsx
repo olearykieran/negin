@@ -22,7 +22,7 @@ export default function Filmography() {
 
       <div className="relative z-10 text-white text-center max-w-6xl mx-auto px-4 py-16">
         <div className="border border-white px-8 py-2 inline-block mb-12">
-          <h2 className="text-3xl font-noto uppercase">{t.filmography.title}</h2>
+          <h2 className="text-3xl font-canela uppercase">{t.filmography.title}</h2>
         </div>
 
         {/* Future Projects Section */}
@@ -62,7 +62,7 @@ export default function Filmography() {
               <p className="text-sm text-gray-300">
                 Writers: Negin Poure & Hera Gunes Barlowe
               </p>
-              <p className="text-sm text-gray-300">Director: TBD</p>
+              <p className="text-sm text-gray-300">Director: Milagros Luis</p>
               <p className="text-sm text-gray-300">Year: 2025</p>
               <p className="text-sm text-gray-300 mt-2">Theater Play</p>
             </div>

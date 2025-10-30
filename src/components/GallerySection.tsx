@@ -24,11 +24,12 @@ export default function GallerySection() {
         <Link
           href="/gallery"
           className="
-            inline-block px-6 md:px-8 py-2 md:py-3 
-            border border-white 
-            text-white hover:bg-white hover:text-black 
+            inline-block px-6 md:px-8 py-2 md:py-3
+            border border-white
+            text-white hover:bg-white hover:text-black
             transition-colors duration-300
             uppercase text-sm tracking-wider
+            font-canela
           "
         >
           View Gallery

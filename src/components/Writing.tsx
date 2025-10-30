@@ -34,7 +34,7 @@ export default function Writing() {
 
       <div className="relative z-10 text-white text-center max-w-6xl mx-auto px-4 py-16">
         <div className="border border-white px-8 py-2 inline-block mb-12">
-          <h2 className="text-3xl font-noto uppercase">{t.writing?.title || "Writing"}</h2>
+          <h2 className="text-3xl font-canela uppercase">{t.writing?.title || "Writing"}</h2>
         </div>
 
         {/* Theater Play Section */}

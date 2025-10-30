@@ -27,13 +27,13 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black bg-opacity-30" />
 
       <div className="relative z-10 text-white text-center">
-        <h1 className="text-5xl md:text-7xl font-satoshi mb-4 leading-tight">
+        <h1 className="text-5xl md:text-7xl font-canela mb-4 leading-tight">
           <span className="block letter-space">Negin Poure</span>
           <span className="block text-3xl md:text-5xl mt-2">نگین پور</span>
         </h1>
 
         <p className="text-sm font-light italic leading-snug">
-          <span className="block">Writer, Actress &amp; Model</span>
+          <span className="block">Actress, Writer &amp; Model</span>
           <span className="block mt-1">نویسنده، بازیگر و مدل</span>
         </p>
       </div>

@@ -52,7 +52,7 @@ export default function ContactSection() {
     <section id="contact" className="bg-[#2f2f2f] text-white py-16 px-4 text-center">
       <div className="max-w-xl mx-auto">
         <div className="border border-white inline-block px-8 py-2 mb-8">
-          <h2 className="text-3xl uppercase">{t.contact.heading}</h2>
+          <h2 className="text-3xl uppercase font-canela">{t.contact.heading}</h2>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto">
@@ -88,7 +88,7 @@ export default function ContactSection() {
           <button
             type="submit"
             disabled={status === "loading"}
-            className="px-6 py-3 border border-white text-white hover:bg-white hover:text-black transition"
+            className="px-6 py-3 border border-white text-white hover:bg-white hover:text-black transition font-canela"
           >
             {status === "loading" ? "Sending..." : t.contact.sendButton}
           </button>

@@ -17,6 +17,7 @@ export default {
         dancingscript: ['"Dancing Script"', "cursive"],
         satoshi: ['"Satoshi"', "sans-serif"],
         supreme: ['"Supreme"', "sans-serif"],
+        canela: ['"Canela"', "serif"],
       },
       colors: {
         background: "var(--background)",

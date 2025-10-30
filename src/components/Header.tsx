@@ -46,13 +46,13 @@ export default function Header() {
 
         {/* Center: NP Logo (Mobile Only) - Using fixed width and text-center */}
         <div className="md:hidden absolute w-full left-0 top-1/2 -translate-y-1/2 text-center pointer-events-none">
-          <span className="font-satoshi text-[rgb(143,143,143)] text-2xl font-bold inline-block">
+          <span className="font-canela text-[rgb(143,143,143)] text-2xl font-bold inline-block">
             NP
           </span>
         </div>
 
         {/* Center Nav (Desktop Only) */}
-        <ul className="hidden md:flex items-center space-x-8 font-noto font-semibold text-black">
+        <ul className="hidden md:flex items-center space-x-8 font-canela font-semibold text-black">
           <li>
             <button onClick={() => scrollToSection("home")} className="hover:text-black">
               {t.menu.home}
@@ -121,7 +121,7 @@ export default function Header() {
       {/* Mobile Menu (if open) */}
       {isOpen && (
         <div className="md:hidden bg-white shadow-sm">
-          <ul className="flex flex-col items-start p-4 space-y-4 font-noto font-semibold text-[rgb(143,143,143)]">
+          <ul className="flex flex-col items-start p-4 space-y-4 font-canela font-semibold text-[rgb(143,143,143)]">
             {/* Language toggle for mobile */}
             <div
               className="flex items-center space-x-1 text-[rgb(143,143,143)] hover:text-black cursor-pointer mb-2"
