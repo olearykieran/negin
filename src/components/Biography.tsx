@@ -49,8 +49,8 @@ export default function Biography() {
           <div className="w-full max-w-xl bg-white px-12 py-14 text-[16px] sm:text-[17px] leading-relaxed tracking-wide shadow-lg lg:absolute lg:right-[-28%] lg:top-1/2 lg:-translate-y-1/2 lg:z-20">
             <p className="mb-8">{t.biography.content}</p>
             <a
-              href="/NeginPoure_Resume%20.pdf"
-              download="NeginPoure_Resume.pdf"
+              href="/NEGIN POURE-3.pdf"
+              download="NEGIN POURE-3.pdf"
               className="inline-block border border-black px-6 py-2 text-xs font-light uppercase tracking-[0.25em] transition hover:bg-black hover:text-white"
             >
               {t.biography.awardsButton}
