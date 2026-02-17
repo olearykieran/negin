@@ -1,10 +1,10 @@
 // src/app/api/contact/route.ts
 import { NextResponse } from "next/server";
-import { initializeApp, cert, getApps } from "firebase-admin/app";
-import { getFirestore } from "firebase-admin/firestore";
 import fs from "fs";
 import path from "path";
 import nodemailer from "nodemailer";
+
+export const runtime = "nodejs";
 
 // Define recipient emails
 const recipientEmails = ["neginzpoure@gmail.com", "kieran@theholygrailstudio.com"];
@@ -18,28 +18,40 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// Initialize Firebase Admin if service account exists
-let db: any = null;
-try {
-  const serviceAccountPath = path.join(process.cwd(), "service-account.json");
-  
-  // Check if service account file exists
-  if (fs.existsSync(serviceAccountPath)) {
-    const serviceAccount = JSON.parse(fs.readFileSync(serviceAccountPath, "utf8"));
-    
-    if (!getApps().length) {
-      initializeApp({
-        credential: cert(serviceAccount),
-      });
+let dbPromise: Promise<any | null> | null = null;
+
+async function getDb() {
+  if (dbPromise) return dbPromise;
+
+  dbPromise = (async () => {
+    const serviceAccountPath = path.join(process.cwd(), "service-account.json");
+
+    if (!fs.existsSync(serviceAccountPath)) {
+      console.log("Service account file not found, Firebase storage disabled");
+      return null;
     }
-    
-    db = getFirestore();
-    console.log("Firebase initialized successfully");
-  } else {
-    console.log("Service account file not found, Firebase storage disabled");
-  }
-} catch (error) {
-  console.error("Error initializing Firebase:", error);
+
+    try {
+      const serviceAccount = JSON.parse(fs.readFileSync(serviceAccountPath, "utf8"));
+
+      const { initializeApp, cert, getApps } = await import("firebase-admin/app");
+      const { getFirestore } = await import("firebase-admin/firestore");
+
+      if (!getApps().length) {
+        initializeApp({
+          credential: cert(serviceAccount),
+        });
+      }
+
+      console.log("Firebase initialized successfully");
+      return getFirestore();
+    } catch (error) {
+      console.error("Error initializing Firebase:", error);
+      return null;
+    }
+  })();
+
+  return dbPromise;
 }
 
 // 3) POST handler
@@ -51,6 +63,7 @@ export async function POST(request: Request) {
     }
 
     // Write to Firestore if available
+    const db = await getDb();
     if (db) {
       try {
         await db.collection("contactMessages").add({

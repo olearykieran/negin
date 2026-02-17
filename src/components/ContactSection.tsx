@@ -3,6 +3,7 @@
 import React, { useState, useContext } from "react";
 import { LanguageContext } from "@/context/LanguageContext";
 import translations from "@/lib/translations";
+import { externalProfiles } from "@/lib/metadata";
 
 export default function ContactSection() {
   const { lang } = useContext(LanguageContext);
@@ -113,6 +114,26 @@ export default function ContactSection() {
             className="underline hover:text-white transition"
           >
             neginzpoure@gmail.com
+          </a>
+        </p>
+        <p className="mt-3">
+          {t.contact.industryLinksLabel || "Talent & Casting Profiles:"}{" "}
+          <a
+            href={externalProfiles.imdb}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-white transition"
+          >
+            IMDb
+          </a>{" "}
+          |{" "}
+          <a
+            href={externalProfiles.mmg}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-white transition"
+          >
+            MMG
           </a>
         </p>
       </div>

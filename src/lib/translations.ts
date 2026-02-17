@@ -5,7 +5,10 @@ const translations = {
     menu: {
       home: "Home",
       biography: "Biography",
-      filmography: "Projects",
+      filmography: "Media",
+      film: "Film",
+      theatre: "Theatre",
+      casting: "For Casting",
       gallery: "Gallery",
       press: "Press",
       writing: "Writing",
@@ -23,12 +26,15 @@ const translations = {
       content:
         "Negin Poure is an Iranian-born, actress, model, and writer based in New York City. Her journey into the world of acting began when she moved to New York to pursue her passion for performance. She studied at the prestigious American Academy of Dramatic Arts, where she earned her Associate's degree in Theater Studies. Negin is a proud member of the Actors Society with a foundation in both Stanislavsky and Meisner techniques. She has been actively involved in both film and theater since the start of her career. When she's not in front of the camera or on stage, she's often immersed in one of her quieter passions; writing poetry or discovering the work of poets from around the world, and sketching. These moments of creativity beyond the spotlight are what keeps her grounded and continually inspired.",
       awardsButton: "Download Resume",
+      industryProfilesTitle: "Industry Profiles",
+      imdbProfile: "IMDb Profile",
+      mmgProfile: "MMG Modeling Portfolio",
     },
     gallery: {
       title: "Gallery",
     },
     filmography: {
-      title: "Projects",
+      title: "Media",
       comingSoon: "Coming Soon",
       description:
         "Exciting projects in development. Check back for updates on Negin's latest film and television work.",
@@ -55,6 +61,7 @@ const translations = {
       successMessage: "Message sent successfully!",
       errorMessage: "Error:",
       directEmail: "Or email directly at:",
+      industryLinksLabel: "Talent & Casting Profiles:",
     },
     footer: {
       copyright: "All rights reserved. Website by HGS",
@@ -67,6 +74,9 @@ const translations = {
       home: "خانه",
       biography: "زندگینامه",
       filmography: "پروژه‌ها",
+      film: "فیلم",
+      theatre: "تئاتر",
+      casting: "برای کستینگ",
       gallery: "گالری",
       press: "رسانه",
       writing: "نوشته‌ها",
@@ -83,6 +93,9 @@ const translations = {
       content:
         "نگین پور، بازیگر، مدل و نویسنده متولد ایران است که در نیویورک زندگی می‌کند. سفر او در دنیای بازیگری زمانی آغاز شد که برای دنبال کردن علاقه‌اش به هنر نمایش به نیویورک نقل مکان کرد. او در آکادمی معتبر هنرهای نمایشی آمریکا تحصیل کرد و مدرک کاردانی خود را در رشته مطالعات تئاتر دریافت کرد. نگین عضو افتخاری انجمن بازیگران است و در هر دو تکنیک استانیسلاوسکی و مایزنر تخصص دارد. او از ابتدای حرفه خود در هر دو زمینه فیلم و تئاتر فعال بوده است. وقتی جلوی دوربین یا روی صحنه نیست، اغلب غرق در یکی از علایق آرام‌تر خود است؛ نوشتن شعر یا کشف آثار شاعران از سراسر جهان، و طراحی. این لحظات خلاقیت فراتر از نورافکن‌ها، چیزی است که او را متعادل و مداوم الهام‌بخش نگه می‌دارد.",
       awardsButton: "دانلود رزومه",
+      industryProfilesTitle: "پروفایل‌های حرفه‌ای",
+      imdbProfile: "پروفایل IMDb",
+      mmgProfile: "پورتفولیو MMG",
     },
     gallery: {
       title: "گالری",
@@ -115,6 +128,7 @@ const translations = {
       successMessage: "پیام با موفقیت ارسال شد!",
       errorMessage: "خطا:",
       directEmail: "یا مستقیماً ایمیل بفرستید به:",
+      industryLinksLabel: "پروفایل‌های حرفه‌ای:",
     },
     footer: {
       copyright: "تمامی حقوق محفوظ است. طراحی وب‌سایت توسط استودیو هولی گریل",

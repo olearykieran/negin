@@ -1,5 +1,13 @@
 /* src/app/globals.css */
 
+@font-face {
+  font-family: "Cy Grotesk Wide";
+  src: url("/fonts/cy-grotesk-wide.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Custom Fonts - Canela */
 @font-face {
   font-family: "Canela";

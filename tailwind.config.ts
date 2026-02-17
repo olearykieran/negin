@@ -15,9 +15,11 @@ export default {
         lora: ['"Lora"', "serif"],
         josefinsans: ['"Josefin Sans"', "sans-serif"],
         dancingscript: ['"Dancing Script"', "cursive"],
+        caveat: ['"Caveat"', "cursive"],
         satoshi: ['"Satoshi"', "sans-serif"],
-        supreme: ['"Supreme"', "sans-serif"],
-        canela: ['"Canela"', "serif"],
+        supreme: ['"Cy Grotesk Wide"', "sans-serif"],
+        canela: ['"Cy Grotesk Wide"', "sans-serif"],
+        cygrotesk: ['"Cy Grotesk Wide"', "sans-serif"],
       },
       colors: {
         background: "var(--background)",

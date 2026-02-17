@@ -1,7 +1,7 @@
 // src/components/Header.tsx
 "use client";
 
-import React, { useState, useContext } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaInstagram, FaTwitter, FaYoutube, FaBars, FaTimes } from "react-icons/fa";
@@ -12,9 +12,43 @@ import { LanguageContext } from "@/context/LanguageContext";
 export default function Header() {
   const { lang, toggleLang } = useContext(LanguageContext);
   const [isOpen, setIsOpen] = useState(false);
+  const [isMediaOpen, setIsMediaOpen] = useState(false);
+  const [isMediaMobileOpen, setIsMediaMobileOpen] = useState(false);
+  const mediaMenuRef = useRef<HTMLLIElement | null>(null);
   const pathname = usePathname();
 
   const t = translations[lang as keyof typeof translations]; // shorthand
+
+  useEffect(() => {
+    setIsMediaOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!isOpen) setIsMediaMobileOpen(false);
+  }, [isOpen]);
+
+  useEffect(() => {
+    const handleDocumentMouseDown = (event: MouseEvent) => {
+      if (!isMediaOpen) return;
+      if (!mediaMenuRef.current) return;
+      const targetNode = event.target as Node | null;
+      if (!targetNode) return;
+      if (!mediaMenuRef.current.contains(targetNode)) {
+        setIsMediaOpen(false);
+      }
+    };
+
+    const handleDocumentKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsMediaOpen(false);
+    };
+
+    document.addEventListener("mousedown", handleDocumentMouseDown);
+    document.addEventListener("keydown", handleDocumentKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", handleDocumentMouseDown);
+      document.removeEventListener("keydown", handleDocumentKeyDown);
+    };
+  }, [isMediaOpen]);
 
   const scrollToSection = (sectionId: string) => {
     // If we're not on the homepage, navigate there first
@@ -66,9 +100,47 @@ export default function Header() {
               {t.menu.biography}
             </button>
           </li>
+          <li ref={mediaMenuRef} className="relative">
+            <button
+              type="button"
+              className="hover:text-black flex items-center space-x-1"
+              aria-haspopup="menu"
+              aria-expanded={isMediaOpen}
+              onClick={() => setIsMediaOpen((prev) => !prev)}
+            >
+              <span>{t.menu.filmography}</span>
+              <ChevronDownIcon
+                className={`w-4 h-4 transition-transform ${isMediaOpen ? "rotate-180" : ""}`}
+              />
+            </button>
+
+            {isMediaOpen && (
+              <div
+                className="absolute left-1/2 -translate-x-1/2 mt-4 w-44 bg-white border border-gray-200 shadow-lg z-50"
+                role="menu"
+              >
+                <Link
+                  href="/media/film"
+                  className="block px-4 py-3 text-sm text-black hover:bg-gray-100"
+                  role="menuitem"
+                  onClick={() => setIsMediaOpen(false)}
+                >
+                  {t.menu.film || "Film"}
+                </Link>
+                <Link
+                  href="/media/theatre"
+                  className="block px-4 py-3 text-sm text-black hover:bg-gray-100"
+                  role="menuitem"
+                  onClick={() => setIsMediaOpen(false)}
+                >
+                  {t.menu.theatre || "Theatre"}
+                </Link>
+              </div>
+            )}
+          </li>
           <li>
-            <Link href="/filmography" className="hover:text-black">
-              {t.menu.filmography}
+            <Link href="/for-casting" className="hover:text-black">
+              {t.menu.casting || "For Casting"}
             </Link>
           </li>
           <li>
@@ -154,12 +226,50 @@ export default function Header() {
               </button>
             </li>
             <li>
+              <button
+                type="button"
+                className="hover:text-black flex items-center space-x-1"
+                aria-expanded={isMediaMobileOpen}
+                onClick={() => setIsMediaMobileOpen((prev) => !prev)}
+              >
+                <span>{t.menu.filmography}</span>
+                <ChevronDownIcon
+                  className={`w-4 h-4 transition-transform ${isMediaMobileOpen ? "rotate-180" : ""}`}
+                />
+              </button>
+
+              {isMediaMobileOpen && (
+                <div className="mt-2 ml-4 flex flex-col space-y-2">
+                  <Link
+                    href="/media/film"
+                    className="hover:text-black"
+                    onClick={() => {
+                      setIsOpen(false);
+                      setIsMediaMobileOpen(false);
+                    }}
+                  >
+                    {t.menu.film || "Film"}
+                  </Link>
+                  <Link
+                    href="/media/theatre"
+                    className="hover:text-black"
+                    onClick={() => {
+                      setIsOpen(false);
+                      setIsMediaMobileOpen(false);
+                    }}
+                  >
+                    {t.menu.theatre || "Theatre"}
+                  </Link>
+                </div>
+              )}
+            </li>
+            <li>
               <Link
-                href="/filmography"
+                href="/for-casting"
                 className="hover:text-black"
                 onClick={() => setIsOpen(false)}
               >
-                {t.menu.filmography}
+                {t.menu.casting || "For Casting"}
               </Link>
             </li>
             <li>
