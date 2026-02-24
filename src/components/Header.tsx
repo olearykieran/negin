@@ -1,10 +1,10 @@
 // src/components/Header.tsx
 "use client";
 
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FaInstagram, FaTwitter, FaYoutube, FaBars, FaTimes } from "react-icons/fa";
+import { FaInstagram, FaBars, FaTimes } from "react-icons/fa";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import translations from "@/lib/translations";
 import { LanguageContext } from "@/context/LanguageContext";
@@ -12,50 +12,39 @@ import { LanguageContext } from "@/context/LanguageContext";
 export default function Header() {
   const { lang, toggleLang } = useContext(LanguageContext);
   const [isOpen, setIsOpen] = useState(false);
-  const [isMediaOpen, setIsMediaOpen] = useState(false);
-  const [isMediaMobileOpen, setIsMediaMobileOpen] = useState(false);
-  const mediaMenuRef = useRef<HTMLLIElement | null>(null);
+  const [hasBlackBg, setHasBlackBg] = useState(false);
   const pathname = usePathname();
 
-  const t = translations[lang as keyof typeof translations]; // shorthand
+  const t = translations[lang as keyof typeof translations];
 
   useEffect(() => {
-    setIsMediaOpen(false);
+    setIsOpen(false);
   }, [pathname]);
 
   useEffect(() => {
-    if (!isOpen) setIsMediaMobileOpen(false);
-  }, [isOpen]);
-
-  useEffect(() => {
-    const handleDocumentMouseDown = (event: MouseEvent) => {
-      if (!isMediaOpen) return;
-      if (!mediaMenuRef.current) return;
-      const targetNode = event.target as Node | null;
-      if (!targetNode) return;
-      if (!mediaMenuRef.current.contains(targetNode)) {
-        setIsMediaOpen(false);
+    const updateHeaderState = () => {
+      if (pathname !== "/") {
+        setHasBlackBg(true);
+        return;
       }
+      const threshold = window.innerHeight * 0.85;
+      setHasBlackBg(window.scrollY > threshold);
     };
 
-    const handleDocumentKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setIsMediaOpen(false);
-    };
+    updateHeaderState();
+    window.addEventListener("scroll", updateHeaderState);
+    window.addEventListener("resize", updateHeaderState);
 
-    document.addEventListener("mousedown", handleDocumentMouseDown);
-    document.addEventListener("keydown", handleDocumentKeyDown);
     return () => {
-      document.removeEventListener("mousedown", handleDocumentMouseDown);
-      document.removeEventListener("keydown", handleDocumentKeyDown);
+      window.removeEventListener("scroll", updateHeaderState);
+      window.removeEventListener("resize", updateHeaderState);
     };
-  }, [isMediaOpen]);
+  }, [pathname]);
 
   const scrollToSection = (sectionId: string) => {
-    // If we're not on the homepage, navigate there first
     if (pathname !== "/") {
       window.location.href = `/#${sectionId}`;
     } else {
-      // If we're already on the homepage, just scroll
       const element = document.getElementById(sectionId);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
@@ -64,124 +53,83 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-[rgb(220,220,220)] shadow-sm">
-      <nav className="container mx-auto flex items-center justify-between py-16 px-6 relative">
-        {/* Left: Social icons */}
+    <header
+      className={`fixed top-0 w-full z-50 transition-colors duration-300 ${
+        hasBlackBg ? "bg-black/55 backdrop-blur-md border-b border-cream/15" : "bg-transparent border-b border-transparent"
+      }`}
+    >
+      <nav className="container mx-auto flex items-center justify-between py-10 px-6 relative">
         <div className="flex items-center space-x-4 z-10">
           <a
             href="https://instagram.com/neginpoure"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[rgb(143,143,143)] hover:text-black"
+            className="text-cream/85 hover:text-cream transition"
           >
-            <FaInstagram size={20} />
+            <FaInstagram size={18} />
           </a>
         </div>
 
-        {/* Center: NP Logo (Mobile Only) - Using fixed width and text-center */}
         <div className="md:hidden absolute w-full left-0 top-1/2 -translate-y-1/2 text-center pointer-events-none">
-          <span className="font-canela text-[rgb(143,143,143)] text-2xl font-bold inline-block">
+          <span className="font-display text-cream text-xl tracking-display inline-block">
             NP
           </span>
         </div>
 
-        {/* Center Nav (Desktop Only) */}
-        <ul className="hidden md:flex items-center space-x-8 font-canela font-semibold text-black">
+        <ul className="hidden md:flex items-center space-x-8 font-display text-cream/90 uppercase tracking-[0.16em] text-[11px]">
           <li>
-            <button onClick={() => scrollToSection("home")} className="hover:text-black">
-              {t.menu.home}
+            <button onClick={() => scrollToSection("home")} className="hover:text-cream transition">
+              {t.menu.home || "Home"}
             </button>
           </li>
           <li>
-            <button
-              onClick={() => scrollToSection("biography")}
-              className="hover:text-black"
-            >
-              {t.menu.biography}
+            <button onClick={() => scrollToSection("about")} className="hover:text-cream transition">
+              {t.menu.about || "About"}
             </button>
           </li>
-          <li ref={mediaMenuRef} className="relative">
-            <button
-              type="button"
-              className="hover:text-black flex items-center space-x-1"
-              aria-haspopup="menu"
-              aria-expanded={isMediaOpen}
-              onClick={() => setIsMediaOpen((prev) => !prev)}
-            >
-              <span>{t.menu.filmography}</span>
-              <ChevronDownIcon
-                className={`w-4 h-4 transition-transform ${isMediaOpen ? "rotate-180" : ""}`}
-              />
-            </button>
-
-            {isMediaOpen && (
-              <div
-                className="absolute left-1/2 -translate-x-1/2 mt-4 w-44 bg-white border border-gray-200 shadow-lg z-50"
-                role="menu"
-              >
-                <Link
-                  href="/media/film"
-                  className="block px-4 py-3 text-sm text-black hover:bg-gray-100"
-                  role="menuitem"
-                  onClick={() => setIsMediaOpen(false)}
-                >
-                  {t.menu.film || "Film"}
-                </Link>
-                <Link
-                  href="/media/theatre"
-                  className="block px-4 py-3 text-sm text-black hover:bg-gray-100"
-                  role="menuitem"
-                  onClick={() => setIsMediaOpen(false)}
-                >
-                  {t.menu.theatre || "Theatre"}
-                </Link>
-              </div>
-            )}
-          </li>
           <li>
-            <Link href="/for-casting" className="hover:text-black">
-              {t.menu.casting || "For Casting"}
+            <Link href="/work" className="hover:text-cream transition">
+              {t.menu.media || "Media"}
             </Link>
           </li>
           <li>
-            <Link href="/gallery" className="hover:text-black">
-              {t.menu.gallery}
+            <Link href="/gallery" className="hover:text-cream transition">
+              {t.menu.gallery || "Gallery"}
             </Link>
           </li>
           <li>
-            <Link href="/press" className="hover:text-black">
-              {t.menu.press}
+            <Link href="/press" className="hover:text-cream transition">
+              {t.menu.press || "Press"}
             </Link>
           </li>
           <li>
-            <Link href="/writing" className="hover:text-black">
+            <Link href="/writing" className="hover:text-cream transition">
               {t.menu.writing || "Writing"}
             </Link>
           </li>
           <li>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="hover:text-black"
-            >
-              {t.menu.contact}
+            <button onClick={() => scrollToSection("contact")} className="hover:text-cream transition">
+              {t.menu.contact || "Contact"}
             </button>
+          </li>
+          <li>
+            <Link href="/for-casting" className="hover:text-cream transition">
+              {t.menu.casting || "For Casting"}
+            </Link>
           </li>
         </ul>
 
-        {/* Right Side: Language Toggle (Desktop) or Hamburger (Mobile) */}
         <div className="flex items-center space-x-4 z-10">
-          {/* Language toggle on md+ screens */}
           <div
-            className="hidden md:flex items-center space-x-1 text-[rgb(143,143,143)] hover:text-black cursor-pointer"
+            className="hidden md:flex items-center space-x-1 text-cream/85 hover:text-cream cursor-pointer transition"
             onClick={toggleLang}
           >
-            <span>{t.languageLabel}</span>
+            <span className="text-[11px] tracking-[0.16em] uppercase">{t.languageLabel}</span>
             <ChevronDownIcon className="w-4 h-4" />
           </div>
 
-          {/* Mobile hamburger / close button */}
           <button
-            className="md:hidden text-[rgb(143,143,143)] hover:text-black focus:outline-none"
+            className="md:hidden text-cream/85 hover:text-cream focus:outline-none transition"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle Menu"
           >
@@ -190,16 +138,14 @@ export default function Header() {
         </div>
       </nav>
 
-      {/* Mobile Menu (if open) */}
       {isOpen && (
-        <div className="md:hidden bg-white shadow-sm">
-          <ul className="flex flex-col items-start p-4 space-y-4 font-canela font-semibold text-[rgb(143,143,143)]">
-            {/* Language toggle for mobile */}
+        <div className="md:hidden bg-black/70 backdrop-blur-sm border-t border-cream/20">
+          <ul className="flex flex-col items-start p-6 space-y-4 font-display uppercase tracking-[0.16em] text-[11px] text-cream/90">
             <div
-              className="flex items-center space-x-1 text-[rgb(143,143,143)] hover:text-black cursor-pointer mb-2"
+              className="flex items-center space-x-1 text-cream/85 hover:text-cream cursor-pointer mb-2"
               onClick={toggleLang}
             >
-              <span>{t.languageLabel}</span>
+              <span className="text-[11px] tracking-[0.16em] uppercase">{t.languageLabel}</span>
               <ChevronDownIcon className="w-4 h-4" />
             </div>
 
@@ -209,93 +155,39 @@ export default function Header() {
                   scrollToSection("home");
                   setIsOpen(false);
                 }}
-                className="hover:text-black"
+                className="hover:text-cream transition"
               >
-                {t.menu.home}
+                {t.menu.home || "Home"}
               </button>
             </li>
             <li>
               <button
                 onClick={() => {
-                  scrollToSection("biography");
+                  scrollToSection("about");
                   setIsOpen(false);
                 }}
-                className="hover:text-black"
+                className="hover:text-cream transition"
               >
-                {t.menu.biography}
+                {t.menu.about || "About"}
               </button>
             </li>
             <li>
-              <button
-                type="button"
-                className="hover:text-black flex items-center space-x-1"
-                aria-expanded={isMediaMobileOpen}
-                onClick={() => setIsMediaMobileOpen((prev) => !prev)}
-              >
-                <span>{t.menu.filmography}</span>
-                <ChevronDownIcon
-                  className={`w-4 h-4 transition-transform ${isMediaMobileOpen ? "rotate-180" : ""}`}
-                />
-              </button>
-
-              {isMediaMobileOpen && (
-                <div className="mt-2 ml-4 flex flex-col space-y-2">
-                  <Link
-                    href="/media/film"
-                    className="hover:text-black"
-                    onClick={() => {
-                      setIsOpen(false);
-                      setIsMediaMobileOpen(false);
-                    }}
-                  >
-                    {t.menu.film || "Film"}
-                  </Link>
-                  <Link
-                    href="/media/theatre"
-                    className="hover:text-black"
-                    onClick={() => {
-                      setIsOpen(false);
-                      setIsMediaMobileOpen(false);
-                    }}
-                  >
-                    {t.menu.theatre || "Theatre"}
-                  </Link>
-                </div>
-              )}
-            </li>
-            <li>
-              <Link
-                href="/for-casting"
-                className="hover:text-black"
-                onClick={() => setIsOpen(false)}
-              >
-                {t.menu.casting || "For Casting"}
+              <Link href="/work" className="hover:text-cream transition" onClick={() => setIsOpen(false)}>
+                {t.menu.media || "Media"}
               </Link>
             </li>
             <li>
-              <Link
-                href="/gallery"
-                className="hover:text-black"
-                onClick={() => setIsOpen(false)}
-              >
-                {t.menu.gallery}
+              <Link href="/gallery" className="hover:text-cream transition" onClick={() => setIsOpen(false)}>
+                {t.menu.gallery || "Gallery"}
               </Link>
             </li>
             <li>
-              <Link
-                href="/press"
-                className="hover:text-black"
-                onClick={() => setIsOpen(false)}
-              >
-                {t.menu.press}
+              <Link href="/press" className="hover:text-cream transition" onClick={() => setIsOpen(false)}>
+                {t.menu.press || "Press"}
               </Link>
             </li>
             <li>
-              <Link
-                href="/writing"
-                className="hover:text-black"
-                onClick={() => setIsOpen(false)}
-              >
+              <Link href="/writing" className="hover:text-cream transition" onClick={() => setIsOpen(false)}>
                 {t.menu.writing || "Writing"}
               </Link>
             </li>
@@ -305,10 +197,19 @@ export default function Header() {
                   scrollToSection("contact");
                   setIsOpen(false);
                 }}
-                className="hover:text-black"
+                className="hover:text-cream transition"
               >
-                {t.menu.contact}
+                {t.menu.contact || "Contact"}
               </button>
+            </li>
+            <li>
+              <Link
+                href="/for-casting"
+                className="hover:text-cream transition"
+                onClick={() => setIsOpen(false)}
+              >
+                {t.menu.casting || "For Casting"}
+              </Link>
             </li>
           </ul>
         </div>

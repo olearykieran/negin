@@ -50,10 +50,10 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="bg-[#2f2f2f] text-white py-16 px-4 text-center">
+    <section id="contact" className="bg-cream text-espresso py-20 px-4 text-center">
       <div className="max-w-xl mx-auto">
-        <div className="border border-white inline-block px-8 py-2 mb-8">
-          <h2 className="text-3xl uppercase font-canela">{t.contact.heading}</h2>
+        <div className="border border-espresso/40 inline-block px-8 py-2 mb-10">
+          <h2 className="text-3xl uppercase font-display tracking-display">{t.contact.heading}</h2>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto">
@@ -61,7 +61,7 @@ export default function ContactSection() {
             <input
               type="text"
               placeholder={t.contact.placeholderName}
-              className="w-full bg-transparent border border-white p-2 text-white placeholder-gray-400 focus:outline-none"
+              className="w-full bg-ivory/60 border border-espresso/30 p-3 text-espresso placeholder-espresso/50 focus:outline-none"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
@@ -71,7 +71,7 @@ export default function ContactSection() {
             <input
               type="email"
               placeholder={t.contact.placeholderEmail}
-              className="w-full bg-transparent border border-white p-2 text-white placeholder-gray-400 focus:outline-none"
+              className="w-full bg-ivory/60 border border-espresso/30 p-3 text-espresso placeholder-espresso/50 focus:outline-none"
               value={senderEmail}
               onChange={(e) => setSenderEmail(e.target.value)}
               required
@@ -80,7 +80,7 @@ export default function ContactSection() {
           <div>
             <textarea
               placeholder={t.contact.placeholderMessage}
-              className="w-full bg-transparent border border-white p-2 text-white placeholder-gray-400 h-32 focus:outline-none"
+              className="w-full bg-ivory/60 border border-espresso/30 p-3 text-espresso placeholder-espresso/50 h-36 focus:outline-none"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               required
@@ -89,7 +89,7 @@ export default function ContactSection() {
           <button
             type="submit"
             disabled={status === "loading"}
-            className="px-6 py-3 border border-white text-white hover:bg-white hover:text-black transition font-canela"
+            className="px-6 py-3 border border-espresso text-espresso hover:bg-espresso hover:text-cream transition font-display tracking-[0.14em] uppercase text-xs"
           >
             {status === "loading" ? "Sending..." : t.contact.sendButton}
           </button>
@@ -97,21 +97,21 @@ export default function ContactSection() {
 
         {/* Display success or error message */}
         {status === "success" && (
-          <p className="mt-4 text-green-400">{t.contact.successMessage}</p>
+          <p className="mt-4 text-espresso/80">{t.contact.successMessage}</p>
         )}
         {status === "error" && (
-          <p className="mt-4 text-red-400">
+          <p className="mt-4 text-espresso/80">
             {t.contact.errorMessage} {errorMsg}
           </p>
         )}
       </div>
       {/* Alternative contact option */}
-      <div className="mt-8 text-gray-300 text-sm">
+      <div className="mt-8 text-espresso/70 text-sm">
         <p>
           {t.contact.directEmail}{" "}
           <a
             href="mailto:neginzpoure@gmail.com"
-            className="underline hover:text-white transition"
+            className="underline hover:text-espresso transition"
           >
             neginzpoure@gmail.com
           </a>
@@ -122,7 +122,7 @@ export default function ContactSection() {
             href={externalProfiles.imdb}
             target="_blank"
             rel="noopener noreferrer"
-            className="underline hover:text-white transition"
+            className="underline hover:text-espresso transition"
           >
             IMDb
           </a>{" "}
@@ -131,7 +131,7 @@ export default function ContactSection() {
             href={externalProfiles.mmg}
             target="_blank"
             rel="noopener noreferrer"
-            className="underline hover:text-white transition"
+            className="underline hover:text-espresso transition"
           >
             MMG
           </a>

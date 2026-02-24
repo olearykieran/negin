@@ -12,13 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${siteUrl}/media/film`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${siteUrl}/media/theatre`,
+      url: `${siteUrl}/work`,
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.9,
@@ -28,12 +22,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.95,
-    },
-    {
-      url: `${siteUrl}/gallery`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.8,
     },
     {
       url: `${siteUrl}/press`,

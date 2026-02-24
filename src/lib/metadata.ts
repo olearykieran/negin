@@ -15,6 +15,7 @@ interface PageMetadata {
   home: MetadataConfig;
   biography: MetadataConfig;
   forCasting: MetadataConfig;
+  work: MetadataConfig;
   film: MetadataConfig;
   theatre: MetadataConfig;
   filmography: MetadataConfig;
@@ -89,6 +90,22 @@ export const metadata: PageMetadata = {
     ogImage: `${siteUrl}/images/new_c3.jpg`,
     ogType: "website",
   },
+  work: {
+    title: "Work | Negin Poure",
+    description:
+      "Selected film, theatre, and still imagery from Negin Poure. A curated portfolio for casting and representation.",
+    keywords: [
+      "Negin Poure work",
+      "lead actress portfolio",
+      "film stills",
+      "theatre performances",
+      "casting portfolio",
+      "NYC actress",
+      "Brooklyn actress",
+    ],
+    ogImage: `${siteUrl}/images/new_c3.jpg`,
+    ogType: "website",
+  },
   film: {
     title: "Film | Negin Poure",
     description:
@@ -133,7 +150,7 @@ export const metadata: PageMetadata = {
   gallery: {
     title: "Gallery | Negin Poure",
     description:
-      "View professional headshots, portrait photography, and performance imagery of actor and model Negin Poure.",
+      "View curated stills, portrait photography, and performance imagery of actor and model Negin Poure.",
     keywords: [
       "Negin Poure gallery",
       "actor headshots NYC",

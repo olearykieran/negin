@@ -4,7 +4,7 @@ import { siteUrl } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: `${siteUrl}/media/film`,
+    canonical: `${siteUrl}/work`,
   },
   robots: {
     index: false,
@@ -13,5 +13,5 @@ export const metadata: Metadata = {
 };
 
 export default function FilmographyPage() {
-  redirect("/media/film");
+  redirect("/work");
 }

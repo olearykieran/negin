@@ -10,8 +10,8 @@ export default function Footer() {
   const t = translations[lang as keyof typeof translations];
 
   return (
-    <footer className="bg-[#2f2f2f] text-white py-6 text-center">
-      <p className="text-sm text-gray-300">
+    <footer className="bg-cream text-espresso py-8 text-center border-t border-espresso/10">
+      <p className="text-xs sm:text-sm text-espresso/70 uppercase tracking-[0.14em]">
         &copy; {new Date().getFullYear()} Negin Poure. {t.footer.copyright.split('HGS').map((part, i, arr) => 
           i === 0 ? (
             <React.Fragment key={i}>
@@ -21,7 +21,7 @@ export default function Footer() {
                   href="https://theholygrailstudio.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-white transition-colors"
+                  className="text-espresso/70 hover:text-espresso transition-colors"
                 >
                   HGS
                 </a>

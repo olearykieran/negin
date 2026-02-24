@@ -8,6 +8,30 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Brittany";
+  src: url("/fonts/britney/Britney-Variable.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cartesius Smallcaps";
+  src: url("/fonts/cart/cartesius-smallcaps.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Signatie";
+  src: url("/fonts/sig/Signatie.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Custom Fonts - Canela */
 @font-face {
   font-family: "Canela";
@@ -77,13 +101,21 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --ivory: #f5f1ea;
+  --cream: #e8e1d8;
+  --charcoal: #2b2a28;
+  --espresso: #3a332c;
+  --antique: #c6a75e;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 /* Optional gradient overlay class */
 .film-gradient {
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(32, 32, 32, 0.8) 100%);
+  background: linear-gradient(135deg, rgba(58, 51, 44, 0.95) 0%, rgba(43, 42, 40, 0.85) 100%);
 }
 
 .letter-space {
@@ -92,4 +124,38 @@ html {
 
 .letter-space-2 {
   letter-spacing: 0.2em;
+}
+
+@layer base {
+  body {
+    background-color: var(--ivory);
+    color: var(--charcoal);
+  }
+}
+
+@layer utilities {
+  .tracking-display {
+    letter-spacing: 0.22em;
+  }
+  .tracking-eyebrow {
+    letter-spacing: 0.18em;
+  }
+}
+
+/* Lightbox theme overrides */
+.yarl__container {
+  background-color: #2b2a28;
+}
+
+.yarl__button {
+  color: #e8e1d8;
+}
+
+.yarl__thumbnails_container {
+  background-color: rgba(43, 42, 40, 0.85);
+}
+
+.yarl__slide_title,
+.yarl__slide_description {
+  color: #e8e1d8;
 }

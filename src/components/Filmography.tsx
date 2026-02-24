@@ -12,28 +12,29 @@ export default function Filmography() {
   return (
     <section
       id="filmography"
-      className="relative w-full min-h-[80vh] bg-center bg-cover bg-no-repeat pt-40"
-      style={{
-        backgroundImage: "url('/images/new_c3.jpg')",
-      }}
+      className="relative w-full min-h-[80vh] bg-ivory pt-40"
     >
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+      <div className="absolute inset-0 opacity-25">
+        <img src="/images/new_c3.jpg" alt="Filmography backdrop" className="w-full h-full object-cover grayscale" />
+      </div>
+      <div className="absolute inset-0 bg-ivory/85"></div>
 
-      <div className="relative z-10 text-white text-center max-w-6xl mx-auto px-4 py-16">
-        <div className="border border-white px-8 py-2 inline-block mb-12">
-          <h2 className="text-3xl font-canela uppercase">{t.filmography.title}</h2>
+      <div className="relative z-10 text-espresso text-center max-w-6xl mx-auto px-6 py-16">
+        <div className="border border-espresso/30 px-8 py-2 inline-block mb-12">
+          <h2 className="text-3xl font-display uppercase tracking-display">
+            {t.menu?.work || "Work"}
+          </h2>
         </div>
 
         {/* Future Projects Section */}
         <div>
-          <h3 className="text-2xl font-light mb-8 uppercase tracking-wide">
+          <h3 className="text-2xl font-display mb-8 uppercase tracking-[0.16em]">
             Coming Soon
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {/* Flighty - Short Film */}
-            <div className="bg-black bg-opacity-50 border border-gray-700 p-6 hover:border-white transition-all">
+            <div className="bg-cream/80 border border-espresso/20 p-6 hover:border-espresso/40 transition-all">
               <div className="h-48 mb-4 overflow-hidden">
                 <img
                   src="/images/flighty.jpeg"
@@ -41,15 +42,15 @@ export default function Filmography() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h4 className="text-xl mb-2 font-semibold">Flighty</h4>
-              <p className="text-sm text-gray-300">Role: Sasha</p>
-              <p className="text-sm text-gray-300">Writer/Director: Giovanni Staricco</p>
-              <p className="text-sm text-gray-300">Year: 2025</p>
-              <p className="text-sm text-gray-300 mt-2">Short Film</p>
+              <h4 className="text-xl mb-2 font-display">Flighty</h4>
+              <p className="text-sm text-espresso/70">Role: Sasha</p>
+              <p className="text-sm text-espresso/70">Writer/Director: Giovanni Staricco</p>
+              <p className="text-sm text-espresso/70">Year: 2025</p>
+              <p className="text-sm text-espresso/70 mt-2">Short Film</p>
             </div>
 
             {/* Stain - Play */}
-            <div className="bg-black bg-opacity-50 border border-gray-700 p-6 hover:border-white transition-all">
+            <div className="bg-cream/80 border border-espresso/20 p-6 hover:border-espresso/40 transition-all">
               <div className="h-48 mb-4 overflow-hidden">
                 <img
                   src="/images/stain.JPG"
@@ -57,14 +58,14 @@ export default function Filmography() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h4 className="text-xl mb-2 font-semibold">Stain</h4>
-              <p className="text-sm text-gray-300">Role: Melody</p>
-              <p className="text-sm text-gray-300">
+              <h4 className="text-xl mb-2 font-display">Stain</h4>
+              <p className="text-sm text-espresso/70">Role: Melody</p>
+              <p className="text-sm text-espresso/70">
                 Writers: Negin Poure & Hera Gunes Barlowe
               </p>
-              <p className="text-sm text-gray-300">Director: Milagros Luis</p>
-              <p className="text-sm text-gray-300">Year: 2025</p>
-              <p className="text-sm text-gray-300 mt-2">Theater Play</p>
+              <p className="text-sm text-espresso/70">Director: Milagros Luis</p>
+              <p className="text-sm text-espresso/70">Year: 2025</p>
+              <p className="text-sm text-espresso/70 mt-2">Theatre Play</p>
             </div>
           </div>
         </div>

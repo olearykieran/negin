@@ -20,9 +20,21 @@ interface Photo {
 
 interface GalleryProps {
   standalone?: boolean;
+  sectionId?: string;
+  titleOverride?: string;
+  showTitle?: boolean;
+  showCredits?: boolean;
+  showCollage?: boolean;
 }
 
-export default function Gallery({ standalone = true }: GalleryProps) {
+export default function Gallery({
+  standalone = true,
+  sectionId,
+  titleOverride,
+  showTitle = true,
+  showCredits = true,
+  showCollage = true,
+}: GalleryProps) {
   const { lang } = useContext(LanguageContext);
   const t = translations[lang as keyof typeof translations];
 
@@ -36,6 +48,9 @@ export default function Gallery({ standalone = true }: GalleryProps) {
 
       // Define all the image paths we want to include
       const imagePaths = [
+        // Work page images moved into gallery
+        "/images/flighty.jpeg",
+        "/images/stain.JPG",
         // New photos
         "/images/new-photos/IMG_8252.JPG",
         "/images/new-photos/IMG_8255.JPG",
@@ -79,23 +94,30 @@ export default function Gallery({ standalone = true }: GalleryProps) {
     loadPhotos();
   }, []);
 
+  const resolvedSectionId = sectionId ?? (standalone ? "gallery" : undefined);
+
   return (
     <>
       <section
-        className={`relative w-full min-h-[80vh] bg-white ${standalone ? "pt-40" : ""}`}
+        id={resolvedSectionId}
+        className={`relative w-full min-h-[80vh] bg-ivory ${standalone ? "pt-40" : ""} ${
+          resolvedSectionId ? "scroll-mt-40" : ""
+        }`}
       >
         <div className="w-full px-6 py-16">
-          <div className="text-center mb-12">
-            <div className="border border-black px-8 py-2 inline-block mb-8">
-              <h1 className="text-3xl font-canela uppercase text-black">
-                {t.gallery.title}
-              </h1>
+          {showTitle && (
+            <div className="text-center mb-12">
+              <div className="border border-espresso/30 px-8 py-2 inline-block mb-8">
+                <h1 className="text-3xl font-display uppercase tracking-display text-espresso">
+                  {titleOverride || t.gallery.title}
+                </h1>
+              </div>
             </div>
-          </div>
+          )}
 
           {loading ? (
             <div className="flex justify-center items-center h-64">
-              <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-white"></div>
+              <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-espresso/60"></div>
             </div>
           ) : (
             <div className="w-full">
@@ -105,11 +127,11 @@ export default function Gallery({ standalone = true }: GalleryProps) {
                   return (
                     <div
                       key={photo.src}
-                      className="aspect-square overflow-hidden cursor-pointer group"
+                      className="aspect-square overflow-hidden cursor-pointer group bg-cream/70"
                       onClick={() => setIndex(i)}
                     >
                       <div className="relative h-full w-full">
-                        <div className="absolute inset-0 z-10 bg-black bg-opacity-0 transition-all duration-300 group-hover:bg-opacity-20"></div>
+                        <div className="absolute inset-0 z-10 bg-espresso/0 transition-all duration-300 group-hover:bg-espresso/15"></div>
                         <img
                           src={photo.src}
                           alt={photo.title || "Gallery image"}
@@ -126,75 +148,79 @@ export default function Gallery({ standalone = true }: GalleryProps) {
               </div>
 
               {/* Credits section */}
-              <div className="mt-12 text-center text-gray-600">
-                <p className="text-base md:text-lg">
-                  Photography by{" "}
-                  <a
-                    href="https://instagram.com/coreyhayesphotos"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-white transition-colors duration-300 underline"
-                  >
-                    @coreyhayesphotos
-                  </a>
-                  {" "}
-                  <a
-                    href="https://instagram.com/jon.forero"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-white transition-colors duration-300 underline"
-                  >
-                    @jon.forero
-                  </a>
-                  {" "}
-                  <a
-                    href="https://instagram.com/spencerheaphy"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-white transition-colors duration-300 underline"
-                  >
-                    @spencerheaphy
-                  </a>
-                </p>
-              </div>
+              {showCredits && (
+                <div className="mt-12 text-center text-espresso/70">
+                  <p className="text-sm md:text-base">
+                    Photography by{" "}
+                    <a
+                      href="https://instagram.com/coreyhayesphotos"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-espresso transition-colors duration-300 underline"
+                    >
+                      @coreyhayesphotos
+                    </a>
+                    {" "}
+                    <a
+                      href="https://instagram.com/jon.forero"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-espresso transition-colors duration-300 underline"
+                    >
+                      @jon.forero
+                    </a>
+                    {" "}
+                    <a
+                      href="https://instagram.com/spencerheaphy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-espresso transition-colors duration-300 underline"
+                    >
+                      @spencerheaphy
+                    </a>
+                  </p>
+                </div>
+              )}
 
               {/* Collage section */}
-              <div className="mt-16">
-                <div className="grid grid-cols-5 gap-0">
-                  {/* First row */}
-                  <div className="aspect-square overflow-hidden">
-                    <img src="/images/1.JPG" alt="Collage 1" className="w-full h-full object-cover" style={{ transform: 'scale(1.5)' }} />
-                  </div>
-                  <div className="aspect-square overflow-hidden">
-                    <img src="/images/2.JPG" alt="Collage 2" className="w-full h-full object-cover" style={{ transform: 'scale(1.5)' }} />
-                  </div>
-                  <div className="aspect-square overflow-hidden">
-                    <img src="/images/new-photos/IMG_9822.JPG" alt="New photo" className="w-full h-full object-cover" style={{ transform: 'scale(1.5)' }} />
-                  </div>
-                  <div className="aspect-square overflow-hidden">
-                    <img src="/images/new-photos/IMG_9819.JPG" alt="New photo" className="w-full h-full object-cover" style={{ transform: 'scale(1.5)' }} />
-                  </div>
-                  <div className="aspect-square">
-                    <img src="/images/5.jpg" alt="Collage 5" className="w-full h-full object-cover" />
-                  </div>
-                  {/* Second row */}
-                  <div className="aspect-square">
-                    <img src="/images/6.jpg" alt="Collage 6" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="aspect-square">
-                    <img src="/images/7.jpg" alt="Collage 7" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="aspect-square">
-                    <img src="/images/3.jpg" alt="Collage 3" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="aspect-square">
-                    <img src="/images/new-photos/IMG_9824.jpg" alt="New photo" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="aspect-square">
-                    <img src="/images/new-photos/IMG_9825.JPG" alt="New photo" className="w-full h-full object-cover" />
+              {showCollage && (
+                <div className="mt-16">
+                  <div className="grid grid-cols-5 gap-0">
+                    {/* First row */}
+                    <div className="aspect-square overflow-hidden">
+                      <img src="/images/1.JPG" alt="Collage 1" className="w-full h-full object-cover" style={{ transform: 'scale(1.5)' }} />
+                    </div>
+                    <div className="aspect-square overflow-hidden">
+                      <img src="/images/2.JPG" alt="Collage 2" className="w-full h-full object-cover" style={{ transform: 'scale(1.5)' }} />
+                    </div>
+                    <div className="aspect-square overflow-hidden">
+                      <img src="/images/new-photos/IMG_9822.JPG" alt="New photo" className="w-full h-full object-cover" style={{ transform: 'scale(1.5)' }} />
+                    </div>
+                    <div className="aspect-square overflow-hidden">
+                      <img src="/images/new-photos/IMG_9819.JPG" alt="New photo" className="w-full h-full object-cover" style={{ transform: 'scale(1.5)' }} />
+                    </div>
+                    <div className="aspect-square">
+                      <img src="/images/5.jpg" alt="Collage 5" className="w-full h-full object-cover" />
+                    </div>
+                    {/* Second row */}
+                    <div className="aspect-square">
+                      <img src="/images/6.jpg" alt="Collage 6" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="aspect-square">
+                      <img src="/images/7.jpg" alt="Collage 7" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="aspect-square">
+                      <img src="/images/3.jpg" alt="Collage 3" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="aspect-square">
+                      <img src="/images/new-photos/IMG_9824.jpg" alt="New photo" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="aspect-square">
+                      <img src="/images/new-photos/IMG_9825.JPG" alt="New photo" className="w-full h-full object-cover" />
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
             </div>
           )}
         </div>
@@ -235,9 +261,9 @@ export default function Gallery({ standalone = true }: GalleryProps) {
           swipe: 250,
         }}
         render={{
-          iconPrev: () => <button className="text-white text-2xl">←</button>,
-          iconNext: () => <button className="text-white text-2xl">→</button>,
-          iconClose: () => <button className="text-white text-2xl">×</button>,
+          iconPrev: () => <button className="text-cream text-2xl">←</button>,
+          iconNext: () => <button className="text-cream text-2xl">→</button>,
+          iconClose: () => <button className="text-cream text-2xl">×</button>,
         }}
       />
     </>

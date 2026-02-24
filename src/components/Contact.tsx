@@ -7,17 +7,17 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="py-16 px-4 bg-black text-white text-center flex flex-col items-center"
+      className="py-16 px-4 bg-cream text-espresso text-center flex flex-col items-center"
     >
-      <h2 className="text-3xl font-canela mb-6">Contact</h2>
-      <p className="font-canela text-lg max-w-xl">
+      <h2 className="text-3xl font-display uppercase tracking-display mb-6">Contact</h2>
+      <p className="font-body text-lg max-w-xl text-espresso/70">
         Interested in collaborating or just want to say hello? Feel free to email me or
         connect via social media.
       </p>
 
       <a
         href="mailto:example@example.com"
-        className="inline-block mt-6 px-6 py-3 border border-white text-white hover:bg-white hover:text-black transition"
+        className="inline-block mt-6 px-6 py-3 border border-espresso text-espresso hover:bg-espresso hover:text-cream transition uppercase tracking-[0.14em] text-xs"
       >
         Email Me
       </a>

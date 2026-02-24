@@ -19,17 +19,17 @@ export default function GallerySection() {
         backgroundPosition: "center",
       }}
     >
-      <div className="absolute inset-0 bg-black bg-opacity-40" />
-      <div className="relative z-10 text-white text-center">
+      <div className="absolute inset-0 bg-espresso/55" />
+      <div className="relative z-10 text-cream text-center">
         <Link
           href="/gallery"
           className="
             inline-block px-6 md:px-8 py-2 md:py-3
-            border border-white
-            text-white hover:bg-white hover:text-black
+            border border-cream/70
+            text-cream hover:bg-cream hover:text-espresso
             transition-colors duration-300
             uppercase text-sm tracking-wider
-            font-canela
+            font-display
           "
         >
           View Gallery
