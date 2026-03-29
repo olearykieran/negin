@@ -26,13 +26,13 @@ export default function Writing() {
       id="writing"
       className="relative w-full min-h-[80vh] bg-ivory pt-40"
     >
-      <div className="absolute inset-0 opacity-25">
-        <img src="/images/new_c1.jpg" alt="Writing backdrop" className="w-full h-full object-cover grayscale" />
+      <div className="absolute inset-0 opacity-100">
+        <img src="/images/writing/052024-negin-nyc-1060764-1200.jpeg" alt="Writing backdrop" className="w-full h-full object-cover" />
       </div>
-      <div className="absolute inset-0 bg-ivory/85"></div>
+      <div className="absolute inset-0 bg-black/60"></div>
 
-      <div className="relative z-10 text-espresso text-center max-w-6xl mx-auto px-6 py-16">
-        <div className="border border-espresso/30 px-8 py-2 inline-block mb-12">
+      <div className="relative z-10 text-cream text-center max-w-6xl mx-auto px-6 py-16">
+        <div className="border border-cream/40 px-8 py-2 inline-block mb-12">
           <h2 className="text-3xl font-display uppercase tracking-display">{t.writing?.title || "Writing"}</h2>
         </div>
 
@@ -42,7 +42,7 @@ export default function Writing() {
           
           <div className="max-w-md mx-auto">
             <div className="bg-cream/80 border border-espresso/20 p-6 hover:border-espresso/40 transition-all">
-              <h4 className="text-xl mb-2 font-display">Stain</h4>
+              <h4 className="text-xl mb-2 font-display text-espresso">Stain</h4>
               <p className="text-sm text-espresso/70">Co-written with Hera Gunes Barlowe</p>
               <p className="text-sm text-espresso/70">Year: 2025</p>
               <p className="text-sm text-espresso/70 mt-2">Theatre Play</p>
@@ -63,7 +63,7 @@ export default function Writing() {
                 rel="noopener noreferrer"
                 className="bg-cream/80 border border-espresso/20 p-6 hover:border-espresso/40 transition-all cursor-pointer block"
               >
-                <h4 className="text-lg mb-2 font-display">{poem.title}</h4>
+                <h4 className="text-lg mb-2 font-display text-espresso">{poem.title}</h4>
                 <p className="text-sm text-espresso/70">{poem.year}</p>
                 <p className="text-xs text-espresso/60 mt-2 hover:text-espresso transition-colors">Click to read →</p>
               </a>

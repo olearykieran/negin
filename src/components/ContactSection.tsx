@@ -50,18 +50,28 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="bg-cream text-espresso py-20 px-4 text-center">
-      <div className="max-w-xl mx-auto">
-        <div className="border border-espresso/40 inline-block px-8 py-2 mb-10">
+    <section id="contact" className="relative text-cream pt-20 pb-8 px-6 sm:px-12 md:px-20 text-center min-h-screen flex flex-col">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img
+          src="/images/neggy2.jpg"
+          alt=""
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <div className="absolute inset-0 bg-black/60" />
+
+      <div className="relative z-10 w-full max-w-4xl mx-auto flex-1 flex flex-col justify-center">
+        <div className="border border-cream/40 inline-block px-8 py-2 mb-10">
           <h2 className="text-3xl uppercase font-display tracking-display">{t.contact.heading}</h2>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto">
+        <form onSubmit={handleSubmit} className="space-y-4 w-full">
           <div>
             <input
               type="text"
               placeholder={t.contact.placeholderName}
-              className="w-full bg-ivory/60 border border-espresso/30 p-3 text-espresso placeholder-espresso/50 focus:outline-none"
+              className="w-full bg-white/10 border border-cream/30 p-3 text-cream placeholder-cream/50 focus:outline-none"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
@@ -71,7 +81,7 @@ export default function ContactSection() {
             <input
               type="email"
               placeholder={t.contact.placeholderEmail}
-              className="w-full bg-ivory/60 border border-espresso/30 p-3 text-espresso placeholder-espresso/50 focus:outline-none"
+              className="w-full bg-white/10 border border-cream/30 p-3 text-cream placeholder-cream/50 focus:outline-none"
               value={senderEmail}
               onChange={(e) => setSenderEmail(e.target.value)}
               required
@@ -80,7 +90,7 @@ export default function ContactSection() {
           <div>
             <textarea
               placeholder={t.contact.placeholderMessage}
-              className="w-full bg-ivory/60 border border-espresso/30 p-3 text-espresso placeholder-espresso/50 h-36 focus:outline-none"
+              className="w-full bg-white/10 border border-cream/30 p-3 text-cream placeholder-cream/50 h-48 focus:outline-none"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               required
@@ -89,7 +99,7 @@ export default function ContactSection() {
           <button
             type="submit"
             disabled={status === "loading"}
-            className="px-6 py-3 border border-espresso text-espresso hover:bg-espresso hover:text-cream transition font-display tracking-[0.14em] uppercase text-xs"
+            className="px-6 py-3 border border-cream text-cream hover:bg-cream hover:text-cream transition font-display tracking-[0.14em] uppercase text-xs"
           >
             {status === "loading" ? "Sending..." : t.contact.sendButton}
           </button>
@@ -97,44 +107,47 @@ export default function ContactSection() {
 
         {/* Display success or error message */}
         {status === "success" && (
-          <p className="mt-4 text-espresso/80">{t.contact.successMessage}</p>
+          <p className="mt-4 text-cream/80">{t.contact.successMessage}</p>
         )}
         {status === "error" && (
-          <p className="mt-4 text-espresso/80">
+          <p className="mt-4 text-cream/80">
             {t.contact.errorMessage} {errorMsg}
           </p>
         )}
-      </div>
-      {/* Alternative contact option */}
-      <div className="mt-8 text-espresso/70 text-sm">
+        {/* Alternative contact option */}
+        <div className="mt-8 text-cream/70 text-sm">
         <p>
           {t.contact.directEmail}{" "}
           <a
             href="mailto:neginzpoure@gmail.com"
-            className="underline hover:text-espresso transition"
+            className="underline hover:text-cream transition"
           >
             neginzpoure@gmail.com
           </a>
         </p>
-        <p className="mt-3">
-          {t.contact.industryLinksLabel || "Talent & Casting Profiles:"}{" "}
-          <a
-            href={externalProfiles.imdb}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline hover:text-espresso transition"
-          >
-            IMDb
-          </a>{" "}
-          |{" "}
-          <a
-            href={externalProfiles.mmg}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline hover:text-espresso transition"
-          >
-            MMG
-          </a>
+      </div>
+      </div>
+
+      {/* Footer */}
+      <div className="relative z-10 mt-auto pt-12">
+        <p className="text-xs sm:text-sm text-cream/50 uppercase tracking-[0.14em]">
+          &copy; {new Date().getFullYear()} Negin Poure. {t.footer.copyright.split('HGS').map((part: string, i: number, arr: string[]) =>
+            i === 0 ? (
+              <React.Fragment key={i}>
+                {part}
+                {i < arr.length - 1 && (
+                  <a
+                    href="https://theholygrailstudio.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-cream/50 hover:text-cream transition-colors"
+                  >
+                    HGS
+                  </a>
+                )}
+              </React.Fragment>
+            ) : part
+          )}
         </p>
       </div>
     </section>

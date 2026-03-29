@@ -4,6 +4,7 @@ import "./globals.css";
 import React, { ReactNode } from "react";
 import type { Metadata } from "next";
 import { LanguageProvider } from "@/context/LanguageContext";
+import ScrollReveal from "@/components/ScrollReveal";
 import { externalProfiles, getPageMetadata, siteUrl } from "@/lib/metadata";
 
 export const metadata: Metadata = {
@@ -82,7 +83,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
       </head>
       <body className="bg-ivory text-charcoal min-h-screen font-body font-[300]">
-        <LanguageProvider>{children}</LanguageProvider>
+        <LanguageProvider>
+          <ScrollReveal />
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

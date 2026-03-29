@@ -23,7 +23,7 @@ const translations = {
       title: "About",
       heading: "International Artist with Global Perspective",
       content:
-        "Negin Poure is an Iranian-born, actress, model, and writer based in New York City. Her journey into the world of acting began when she moved to New York to pursue her passion for performance. She studied at the prestigious American Academy of Dramatic Arts, where she earned her Associate's degree in Theater Studies. Negin is a proud member of the Actors Society with a foundation in both Stanislavsky and Meisner techniques. She has been actively involved in both film and theater since the start of her career. When she's not in front of the camera or on stage, she's often immersed in one of her quieter passions; writing poetry or discovering the work of poets from around the world, and sketching. These moments of creativity beyond the spotlight are what keeps her grounded and continually inspired.",
+        "Negin Poure is an Iranian-born, actress, model, and writer based in New York City. Her journey into the world of acting began when she moved to New York to pursue her passion for performance. She studied at the prestigious American Academy of Dramatic Arts, where she earned her Associate's degree in Theater Studies. Negin is a proud member of the Actors Society with a foundation in both Stanislavsky and Meisner techniques. Her work has spanned both film and theater since she first began performing. Beyond the stage and camera, Negin likes to sketch and paint-a quiet rituals that nourish her artistic voice and keep her grounded.",
       awardsButton: "Download Resume",
       industryProfilesTitle: "Industry Profiles",
       imdbProfile: "IMDb Profile",
@@ -31,11 +31,19 @@ const translations = {
     },
     gallery: {
       title: "Stills",
+      eyebrow: "Selected Frames",
+      description:
+        "A curated collection of headshots, production stills, and portfolio images.",
+      chooseCollection: "Choose a collection",
+      openCollection: "Open collection",
+      backButton: "Back to Gallery",
+      emptyState: "This collection is being assembled and will be updated soon.",
     },
     press: {
       title: "Press",
       canvasRebel: "Canvas Rebel Interview",
       boldJourney: "Bold Journey Interview",
+      pozeMagazine: "Poze Magazine Vol. 86",
       readMore: "Read More",
       description:
         "Discover Negin's journey, inspirations, and artistic vision through interviews and features.",
@@ -91,11 +99,19 @@ const translations = {
     },
     gallery: {
       title: "تصاویر",
+      eyebrow: "فریم‌های منتخب",
+      description:
+        "مجموعه‌ای گزیده از هدشات‌ها، عکس‌های صحنه و تصاویر پورتفولیو.",
+      chooseCollection: "یک مجموعه را انتخاب کنید",
+      openCollection: "مشاهده مجموعه",
+      backButton: "بازگشت به گالری",
+      emptyState: "این مجموعه در حال تکمیل است و به‌زودی به‌روزرسانی می‌شود.",
     },
     press: {
       title: "رسانه",
       canvasRebel: "مصاحبه با کنواس ربل",
       boldJourney: "مصاحبه با بولد جرنی",
+      pozeMagazine: "مجله پوز شماره ۸۶",
       readMore: "بیشتر بخوانید",
       description:
         "سفر، الهام‌ها و دیدگاه هنری نگین را از طریق مصاحبه‌ها و ویژگی‌ها کشف کنید.",

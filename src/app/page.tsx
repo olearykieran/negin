@@ -3,10 +3,7 @@ import React from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Biography from "@/components/Biography";
-// REMOVE Filmography & Press from here
-import GallerySection from "@/components/GallerySection";
 import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
 
 export default function HomePage() {
   return (
@@ -16,12 +13,8 @@ export default function HomePage() {
       <Hero />
       {/* Biography */}
       <Biography />
-      {/* Parallax Gallery */}
-      <GallerySection />
-      {/* Contact */}
+      {/* Contact + Footer */}
       <ContactSection />
-      {/* Footer */}
-      <Footer />
     </>
   );
 }

@@ -97,6 +97,82 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "IranNastaliq";
+  src: url("/fonts/farsi/IranNastaliq-Web.woff2") format("woff2"),
+       url("/fonts/farsi/IranNastaliq.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mikhak";
+  src: url("/fonts/farsi/Mikhak-Thin.woff2") format("woff2"),
+       url("/fonts/farsi/Mikhak-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mikhak";
+  src: url("/fonts/farsi/Mikhak-ExtraLight.woff2") format("woff2"),
+       url("/fonts/farsi/Mikhak-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Shabnam";
+  src: url("/fonts/farsi/Shabnam.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Samim";
+  src: url("/fonts/farsi/Samim.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/fonts/farsi/Vazirmatn-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Aref Ruqaa";
+  src: url("/fonts/farsi/ArefRuqaa-Regular.woff2") format("woff2"),
+       url("/fonts/farsi/ArefRuqaa-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lora";
+  src: url("/fonts/lora/Lora-Variable.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lora";
+  src: url("/fonts/lora/Lora-VariableItalic.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -130,6 +206,22 @@ html {
   body {
     background-color: var(--ivory);
     color: var(--charcoal);
+  }
+
+  /* Elegant text selection */
+  ::selection {
+    background-color: var(--espresso);
+    color: var(--cream);
+  }
+
+  /* Smooth image loading */
+  img {
+    transition: opacity 0.5s ease;
+  }
+
+  /* Smooth focus states */
+  a, button, input, textarea {
+    transition: all 0.3s ease;
   }
 }
 

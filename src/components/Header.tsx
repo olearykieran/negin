@@ -112,11 +112,6 @@ export default function Header() {
               {t.menu.contact || "Contact"}
             </button>
           </li>
-          <li>
-            <Link href="/for-casting" className="hover:text-cream transition">
-              {t.menu.casting || "For Casting"}
-            </Link>
-          </li>
         </ul>
 
         <div className="flex items-center space-x-4 z-10">
@@ -201,15 +196,6 @@ export default function Header() {
               >
                 {t.menu.contact || "Contact"}
               </button>
-            </li>
-            <li>
-              <Link
-                href="/for-casting"
-                className="hover:text-cream transition"
-                onClick={() => setIsOpen(false)}
-              >
-                {t.menu.casting || "For Casting"}
-              </Link>
             </li>
           </ul>
         </div>

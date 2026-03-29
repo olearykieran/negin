@@ -10,7 +10,7 @@ export default {
     extend: {
       fontFamily: {
         display: ['"Cormorant Garamond"', "serif"],
-        body: ['"Cormorant Garamond"', "serif"],
+        body: ['"Lora"', "serif"],
         canela: ['"Cormorant Garamond"', "serif"],
         supreme: ['"Cormorant Garamond"', "serif"],
         britney: ['"Brittany"', "serif"],
