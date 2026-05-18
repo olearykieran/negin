@@ -14,6 +14,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [hasBlackBg, setHasBlackBg] = useState(false);
   const pathname = usePathname();
+  const resumeHref = "/resume/negin-poure-resume.png";
 
   const t = translations[lang as keyof typeof translations];
 
@@ -83,9 +84,14 @@ export default function Header() {
             </button>
           </li>
           <li>
-            <button onClick={() => scrollToSection("about")} className="hover:text-cream transition">
-              {t.menu.about || "About"}
-            </button>
+            <a
+              href={resumeHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-cream transition"
+            >
+              {t.menu.resume || "Resume"}
+            </a>
           </li>
           <li>
             <Link href="/work" className="hover:text-cream transition">
@@ -156,15 +162,15 @@ export default function Header() {
               </button>
             </li>
             <li>
-              <button
-                onClick={() => {
-                  scrollToSection("about");
-                  setIsOpen(false);
-                }}
+              <a
+                href={resumeHref}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="hover:text-cream transition"
+                onClick={() => setIsOpen(false)}
               >
-                {t.menu.about || "About"}
-              </button>
+                {t.menu.resume || "Resume"}
+              </a>
             </li>
             <li>
               <Link href="/work" className="hover:text-cream transition" onClick={() => setIsOpen(false)}>

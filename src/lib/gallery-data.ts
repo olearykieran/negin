@@ -74,7 +74,6 @@ export const categories: GalleryCategory[] = [
       "/images/portfolio/10.jpeg",
       // B&W slip dress studio
       "/images/portfolio/1.1.JPG",
-      "/images/portfolio/1.JPG",
       "/images/portfolio/13.JPG",
       "/images/portfolio/14.JPG",
       "/images/portfolio/17.JPG",
@@ -84,7 +83,6 @@ export const categories: GalleryCategory[] = [
       // B&W bed
       "/images/portfolio/16.jpeg",
       "/images/portfolio/20.jpeg",
-      "/images/portfolio/21.jpeg",
       // White studio / tulle
       "/images/portfolio/22.JPG",
       "/images/portfolio/23.JPG",

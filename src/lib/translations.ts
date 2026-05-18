@@ -5,6 +5,7 @@ const translations = {
     menu: {
       home: "Home",
       about: "About",
+      resume: "Resume",
       media: "Media",
       gallery: "Gallery",
       work: "Work",
@@ -74,6 +75,7 @@ const translations = {
     menu: {
       home: "خانه",
       about: "درباره",
+      resume: "رزومه",
       media: "رسانه",
       gallery: "گالری",
       work: "آثار",
