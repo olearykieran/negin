@@ -15,6 +15,7 @@ export default function Header() {
   const [hasBlackBg, setHasBlackBg] = useState(false);
   const pathname = usePathname();
   const resumeHref = "/resume/negin-poure-resume.png";
+  const navItemClass = "uppercase hover:text-cream transition";
 
   const t = translations[lang as keyof typeof translations];
 
@@ -79,7 +80,7 @@ export default function Header() {
 
         <ul className="hidden md:flex items-center space-x-8 font-display text-cream/90 uppercase tracking-[0.16em] text-[11px]">
           <li>
-            <button onClick={() => scrollToSection("home")} className="hover:text-cream transition">
+            <button onClick={() => scrollToSection("home")} className={navItemClass}>
               {t.menu.home || "Home"}
             </button>
           </li>
@@ -88,33 +89,33 @@ export default function Header() {
               href={resumeHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-cream transition"
+              className={navItemClass}
             >
               {t.menu.resume || "Resume"}
             </a>
           </li>
           <li>
-            <Link href="/work" className="hover:text-cream transition">
+            <Link href="/work" className={navItemClass}>
               {t.menu.media || "Media"}
             </Link>
           </li>
           <li>
-            <Link href="/gallery" className="hover:text-cream transition">
+            <Link href="/gallery" className={navItemClass}>
               {t.menu.gallery || "Gallery"}
             </Link>
           </li>
           <li>
-            <Link href="/press" className="hover:text-cream transition">
+            <Link href="/press" className={navItemClass}>
               {t.menu.press || "Press"}
             </Link>
           </li>
           <li>
-            <Link href="/writing" className="hover:text-cream transition">
+            <Link href="/writing" className={navItemClass}>
               {t.menu.writing || "Writing"}
             </Link>
           </li>
           <li>
-            <button onClick={() => scrollToSection("contact")} className="hover:text-cream transition">
+            <button onClick={() => scrollToSection("contact")} className={navItemClass}>
               {t.menu.contact || "Contact"}
             </button>
           </li>
@@ -156,7 +157,7 @@ export default function Header() {
                   scrollToSection("home");
                   setIsOpen(false);
                 }}
-                className="hover:text-cream transition"
+                className={navItemClass}
               >
                 {t.menu.home || "Home"}
               </button>
@@ -166,29 +167,29 @@ export default function Header() {
                 href={resumeHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-cream transition"
+                className={navItemClass}
                 onClick={() => setIsOpen(false)}
               >
                 {t.menu.resume || "Resume"}
               </a>
             </li>
             <li>
-              <Link href="/work" className="hover:text-cream transition" onClick={() => setIsOpen(false)}>
+              <Link href="/work" className={navItemClass} onClick={() => setIsOpen(false)}>
                 {t.menu.media || "Media"}
               </Link>
             </li>
             <li>
-              <Link href="/gallery" className="hover:text-cream transition" onClick={() => setIsOpen(false)}>
+              <Link href="/gallery" className={navItemClass} onClick={() => setIsOpen(false)}>
                 {t.menu.gallery || "Gallery"}
               </Link>
             </li>
             <li>
-              <Link href="/press" className="hover:text-cream transition" onClick={() => setIsOpen(false)}>
+              <Link href="/press" className={navItemClass} onClick={() => setIsOpen(false)}>
                 {t.menu.press || "Press"}
               </Link>
             </li>
             <li>
-              <Link href="/writing" className="hover:text-cream transition" onClick={() => setIsOpen(false)}>
+              <Link href="/writing" className={navItemClass} onClick={() => setIsOpen(false)}>
                 {t.menu.writing || "Writing"}
               </Link>
             </li>
@@ -198,7 +199,7 @@ export default function Header() {
                   scrollToSection("contact");
                   setIsOpen(false);
                 }}
-                className="hover:text-cream transition"
+                className={navItemClass}
               >
                 {t.menu.contact || "Contact"}
               </button>

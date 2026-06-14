@@ -35,7 +35,7 @@ export default function GalleryCategoryView({
             {category.photos.map((src, i) => (
               <div
                 key={src}
-                className="aspect-[4/5] overflow-hidden rounded-2xl bg-charcoal shadow-[0_8px_30px_rgba(58,51,44,0.12)]"
+                className="aspect-[4/5] overflow-hidden bg-charcoal shadow-[0_8px_30px_rgba(58,51,44,0.12)]"
               >
                 <img
                   src={src}

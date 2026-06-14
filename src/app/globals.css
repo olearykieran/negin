@@ -202,6 +202,28 @@ html {
   letter-spacing: 0.2em;
 }
 
+@keyframes hero-image-drift {
+  0%, 100% {
+    transform: scale(1.035) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: scale(1.055) translate3d(-0.7%, -0.45%, 0);
+  }
+}
+
+.hero-image-drift {
+  animation: hero-image-drift 30s ease-in-out infinite;
+  transform-origin: 62% 48%;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-image-drift {
+    animation: none;
+    transform: scale(1.035);
+  }
+}
+
 @layer base {
   body {
     background-color: var(--ivory);

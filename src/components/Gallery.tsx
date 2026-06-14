@@ -23,12 +23,12 @@ function GalleryCard({
   return (
     <Link
       href={`/gallery/${category.slug}`}
-      className={`group relative flex w-full overflow-hidden rounded-[1.75rem] bg-charcoal text-left shadow-[0_12px_40px_rgba(58,51,44,0.14)] transition-shadow duration-500 hover:shadow-[0_20px_60px_rgba(58,51,44,0.22)] ${className}`}
+      className={`group relative flex w-full overflow-hidden bg-[#d4d4d2] text-left shadow-[0_12px_40px_rgba(58,51,44,0.14)] transition-shadow duration-500 hover:shadow-[0_20px_60px_rgba(58,51,44,0.22)] ${className}`}
     >
       <img
         src={category.image}
         alt={category.name}
-        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+        className="absolute inset-0 h-full w-full object-contain transition-transform duration-700 ease-out group-hover:scale-[1.015]"
         style={{ objectPosition: category.position }}
       />
       {/* Strong bottom gradient for text readability */}
@@ -53,6 +53,7 @@ export default function Gallery({
   const { lang } = useContext(LanguageContext);
   const t = translations[lang as keyof typeof translations];
   const resolvedSectionId = sectionId ?? (standalone ? "gallery" : undefined);
+  const visibleCategories = categories.filter((category) => category.slug === "portfolio");
 
   return (
     <section
@@ -83,20 +84,14 @@ export default function Gallery({
             </div>
           )}
 
-          {/* Balanced 2-col grid: Headshots spans full left, Production + Portfolio stack right */}
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:grid-rows-[1fr_1fr]" style={{ minHeight: "clamp(32rem, 55vw, 44rem)" }}>
-            <GalleryCard
-              category={categories[0]}
-              className="min-h-[28rem] md:row-span-2 md:min-h-0"
-            />
-            <GalleryCard
-              category={categories[1]}
-              className="min-h-[18rem] md:min-h-0"
-            />
-            <GalleryCard
-              category={categories[2]}
-              className="min-h-[18rem] md:min-h-0"
-            />
+          <div className="grid grid-cols-1 gap-5" style={{ minHeight: "clamp(28rem, 48vw, 42rem)" }}>
+            {visibleCategories.map((category) => (
+              <GalleryCard
+                key={category.slug}
+                category={category}
+                className="min-h-[28rem]"
+              />
+            ))}
           </div>
         </div>
       </div>
