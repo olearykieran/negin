@@ -17,11 +17,11 @@ export default function WorkPage() {
           src="/images/neggy2.jpg"
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover object-center"
+          className="absolute inset-0 h-full w-full scale-105 object-cover object-center blur-[2px]"
         />
-        <div className="absolute inset-0 bg-black/68" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.88)_0%,rgba(0,0,0,0.54)_36%,rgba(0,0,0,0.82)_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.4)_0%,rgba(0,0,0,0.18)_50%,rgba(0,0,0,0.5)_100%)]" />
+        <div className="absolute inset-0 bg-black/74" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.94)_0%,rgba(0,0,0,0.58)_42%,rgba(0,0,0,0.88)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.58)_0%,rgba(0,0,0,0.2)_50%,rgba(0,0,0,0.62)_100%)]" />
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 py-24">
           <div className="text-center mb-12">
