@@ -54,12 +54,13 @@ export default function ContactSection() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="/images/neggy2.jpg"
+          src="/images/contact-bg.JPG"
           alt=""
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-[45%_center]"
         />
       </div>
-      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-black/62" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.34)_0%,rgba(0,0,0,0.66)_50%,rgba(0,0,0,0.82)_100%)]" />
 
       <div className="relative z-10 w-full max-w-4xl mx-auto flex-1 flex flex-col justify-center">
         <div className="border border-cream/40 inline-block px-8 py-2 mb-10">

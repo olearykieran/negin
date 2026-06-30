@@ -23,23 +23,17 @@ function GalleryCard({
   return (
     <Link
       href={`/gallery/${category.slug}`}
-      className={`group relative flex w-full overflow-hidden bg-[#d4d4d2] text-left shadow-[0_12px_40px_rgba(58,51,44,0.14)] transition-shadow duration-500 hover:shadow-[0_20px_60px_rgba(58,51,44,0.22)] ${className}`}
+      className={`group relative mx-auto flex w-full max-w-[42rem] items-center justify-between overflow-hidden border border-white/18 bg-black/28 px-7 py-6 text-left shadow-[0_24px_80px_rgba(0,0,0,0.3)] backdrop-blur-[2px] transition-all duration-500 hover:border-white/34 hover:bg-black/36 hover:shadow-[0_30px_95px_rgba(0,0,0,0.42)] sm:px-9 sm:py-7 ${className}`}
     >
-      <img
-        src={category.image}
-        alt={category.name}
-        className="absolute inset-0 h-full w-full object-contain transition-transform duration-700 ease-out group-hover:scale-[1.015]"
-        style={{ objectPosition: category.position }}
-      />
-      {/* Strong bottom gradient for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/5" />
-
-      <div className="relative z-10 flex h-full w-full flex-col justify-end p-7 sm:p-9">
+      <div>
         <div className="mb-4 h-px w-14 bg-cream/50 transition-all duration-500 group-hover:w-24 group-hover:bg-cream/75" />
-        <h2 className="font-display text-[1.65rem] uppercase leading-[1] tracking-[0.14em] text-cream drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] sm:text-[2rem] lg:text-[2.4rem]">
+        <h2 className="font-display text-[1.55rem] uppercase leading-[1] tracking-[0.18em] text-cream drop-shadow-[0_2px_8px_rgba(0,0,0,0.55)] sm:text-[2rem]">
           {category.name}
         </h2>
       </div>
+      <span className="ml-6 text-[0.64rem] uppercase tracking-[0.24em] text-white/58 transition-colors duration-500 group-hover:text-white/82">
+        View
+      </span>
     </Link>
   );
 }
@@ -58,38 +52,43 @@ export default function Gallery({
   return (
     <section
       id={resolvedSectionId}
-      className={`relative overflow-hidden bg-ivory ${
+      className={`relative min-h-screen overflow-hidden bg-black text-white ${
         standalone ? "pt-24" : "pt-8"
       } ${resolvedSectionId ? "scroll-mt-40" : ""}`}
     >
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-[#ebe4d8] to-transparent" />
+      <img
+        src="/images/gallery-bg.jpg"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover object-[38%_30%]"
+      />
+      <div className="absolute inset-0 bg-black/66" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.9)_0%,rgba(0,0,0,0.54)_34%,rgba(0,0,0,0.86)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.5)_0%,rgba(0,0,0,0.16)_52%,rgba(0,0,0,0.54)_100%)]" />
 
-      <div className="relative px-4 pb-16 sm:px-6 lg:px-10">
+      <div className="relative z-10 px-4 pb-16 sm:px-6 lg:px-10">
         <div className="mx-auto max-w-7xl">
           {/* Intro — above the grid, compact and centered */}
           {showTitle && (
             <div className="relative mb-12 pt-8 text-center">
-              <p className="mb-4 text-[0.68rem] uppercase tracking-[0.34em] text-espresso/50">
+              <p className="mb-4 text-[0.68rem] uppercase tracking-[0.34em] text-white/55">
                 {t.gallery.eyebrow}
               </p>
-              <h1 className="font-display text-5xl uppercase tracking-[0.12em] text-espresso sm:text-6xl">
+              <h1 className="font-display text-5xl uppercase tracking-[0.12em] text-white drop-shadow-[0_2px_18px_rgba(0,0,0,0.65)] sm:text-6xl">
                 {titleOverride || t.gallery.title}
               </h1>
-              <p className="mx-auto mt-6 max-w-lg text-base leading-relaxed text-espresso/65">
-                {t.gallery.description}
-              </p>
-              <p className="mt-8 text-[0.72rem] uppercase tracking-[0.28em] text-espresso/40">
-                {t.gallery.chooseCollection}
+              <p className="mx-auto mt-6 max-w-lg text-base leading-relaxed text-white/76">
+                A curated portfolio of selected frames.
               </p>
             </div>
           )}
 
-          <div className="grid grid-cols-1 gap-5" style={{ minHeight: "clamp(28rem, 48vw, 42rem)" }}>
+          <div className="mx-auto grid max-w-3xl grid-cols-1 gap-5 pb-16">
             {visibleCategories.map((category) => (
               <GalleryCard
                 key={category.slug}
                 category={category}
-                className="min-h-[28rem]"
+                className="min-h-[7.5rem]"
               />
             ))}
           </div>

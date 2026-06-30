@@ -85,16 +85,6 @@ export default function Header() {
             </button>
           </li>
           <li>
-            <a
-              href={resumeHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={navItemClass}
-            >
-              {t.menu.resume || "Resume"}
-            </a>
-          </li>
-          <li>
             <Link href="/work" className={navItemClass}>
               {t.menu.media || "Media"}
             </Link>
@@ -113,6 +103,16 @@ export default function Header() {
             <Link href="/writing" className={navItemClass}>
               {t.menu.writing || "Writing"}
             </Link>
+          </li>
+          <li>
+            <a
+              href={resumeHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={navItemClass}
+            >
+              {t.menu.resume || "Resume"}
+            </a>
           </li>
           <li>
             <button onClick={() => scrollToSection("contact")} className={navItemClass}>
@@ -163,17 +163,6 @@ export default function Header() {
               </button>
             </li>
             <li>
-              <a
-                href={resumeHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={navItemClass}
-                onClick={() => setIsOpen(false)}
-              >
-                {t.menu.resume || "Resume"}
-              </a>
-            </li>
-            <li>
               <Link href="/work" className={navItemClass} onClick={() => setIsOpen(false)}>
                 {t.menu.media || "Media"}
               </Link>
@@ -192,6 +181,17 @@ export default function Header() {
               <Link href="/writing" className={navItemClass} onClick={() => setIsOpen(false)}>
                 {t.menu.writing || "Writing"}
               </Link>
+            </li>
+            <li>
+              <a
+                href={resumeHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={navItemClass}
+                onClick={() => setIsOpen(false)}
+              >
+                {t.menu.resume || "Resume"}
+              </a>
             </li>
             <li>
               <button
