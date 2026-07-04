@@ -15,16 +15,18 @@ export default function GalleryCategoryView({
   const t = translations[lang as keyof typeof translations];
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-black pt-24 text-white scroll-mt-40">
-      <img
-        src="/images/gallery-bg.jpg"
-        alt=""
-        aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-cover object-[38%_30%]"
-      />
-      <div className="absolute inset-0 bg-black/70" />
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.92)_0%,rgba(0,0,0,0.58)_34%,rgba(0,0,0,0.88)_100%)]" />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.52)_0%,rgba(0,0,0,0.2)_52%,rgba(0,0,0,0.58)_100%)]" />
+    <section className="relative min-h-screen bg-black pt-24 text-white scroll-mt-40">
+      <div className="absolute inset-0" aria-hidden="true">
+        <div className="sticky top-0 h-screen overflow-hidden">
+          <img
+            src="/images/gallery-bg.jpg"
+            alt=""
+            className="h-full w-full object-cover object-[38%_26%]"
+          />
+          <div className="absolute inset-0 bg-black/55" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.72)_0%,rgba(0,0,0,0.42)_34%,rgba(0,0,0,0.72)_100%)]" />
+        </div>
+      </div>
 
       <div className="relative z-10 px-4 pb-24 pt-8 sm:px-6 lg:px-10">
         <div className="mx-auto max-w-7xl">

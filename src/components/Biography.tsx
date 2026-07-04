@@ -17,31 +17,43 @@ export default function Biography() {
       <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black/80 to-transparent" />
 
       <div className="relative z-10 flex min-h-screen items-center px-8 py-24 sm:px-12 md:px-16">
-        <div className="ml-auto w-full max-w-[46rem]">
+        <div className="ml-auto w-full max-w-[31rem]">
           <span className="block text-white/78 text-[11px] sm:text-xs tracking-eyebrow uppercase">
             My Story
           </span>
 
-          <h2 className="mt-8 font-display text-[clamp(2.15rem,4.6vw,4.25rem)] font-light leading-[1.08] tracking-[-0.01em] text-white drop-shadow-[0_2px_22px_rgba(0,0,0,0.78)]">
-            Born in Iran, raised in India — an actress, writer, and emerging
-            filmmaker based between <span className="italic">New York</span> and{" "}
-            <span className="italic">Los Angeles</span>.
+          <h2 className="mt-7 font-display text-[clamp(1.4rem,2.2vw,1.8rem)] font-light leading-[1.5] text-white/95 drop-shadow-[0_2px_18px_rgba(0,0,0,0.78)]">
+            Negin Poure, born in Iran and raised in India, is an actress,
+            writer, and model based in <span className="italic">New York</span>{" "}
+            and <span className="italic">LA</span>.
           </h2>
 
-          <div className="mt-10 grid gap-8 text-sm leading-[1.85] text-white/86 drop-shadow-[0_2px_16px_rgba(0,0,0,0.76)] md:grid-cols-3 md:gap-10 md:text-[15px]">
+          <span className="mt-7 block h-px w-10 bg-white/35" />
+
+          <div className="mt-7 space-y-5 font-body text-[13.5px] leading-[1.9] text-white/82 drop-shadow-[0_2px_14px_rgba(0,0,0,0.76)] sm:text-sm">
             <p>
-              She trained at the American Academy of Dramatic Arts, earning her
-              Associate Degree in Theater Studies, with extensive study in the
-              Stanislavski and Meisner techniques.
+              She began her journey as a performer after moving to New York to
+              pursue a career in the arts.
             </p>
             <p>
-              Beyond performing, she has developed original narratives for both
-              stage and screen as a writer and emerging filmmaker.
+              Negin studied at the American Academy of Dramatic Arts, where she
+              earned her Associate Degree in Theater Studies and trained
+              extensively in both Stanislavski and Meisner techniques.
             </p>
             <p>
-              In 2025 she made her playwright debut with the original stage
-              production <span className="font-semibold text-white">Stain</span>,
-              and is currently developing a slate of original short films.
+              Her work has spanned both film and theater since she first began
+              performing.
+            </p>
+            <p>
+              In addition to acting, Negin is a writer and emerging filmmaker
+              dedicated to developing original narratives for both stage and
+              screen.
+            </p>
+            <p>
+              In 2025, Negin made her debut as a playwright with her original
+              stage production <span className="italic text-white">Stain</span>.
+              She is currently developing a slate of original short films and
+              continues to expand her work as a writer and filmmaker.
             </p>
           </div>
         </div>

@@ -1,9 +1,16 @@
+export interface GalleryPlate {
+  src: string;
+  position?: string;
+}
+
 export interface GalleryCategory {
   name: string;
   slug: string;
   image: string;
   position: string;
   photoPosition?: string;
+  /** Landing-page composition: [left, center, right] */
+  plates?: GalleryPlate[];
   photos: string[];
 }
 
@@ -49,37 +56,35 @@ export const categories: GalleryCategory[] = [
   {
     name: "Portfolio",
     slug: "portfolio",
-    image: "/images/newest/portfolio-duo.JPG",
-    position: "70% 20%",
+    image: "/images/portfolio/13.JPG",
+    position: "center 22%",
+    plates: [
+      { src: "/images/portfolio/first.jpeg", position: "center 30%" },
+      { src: "/images/portfolio/13.JPG", position: "center 20%" },
+      { src: "/images/portfolio/10.2.jpeg", position: "center 40%" },
+    ],
     photos: [
-      // Green hoodie duo
-      "/images/newest/portfolio-duo.JPG",
-      // Dinkwink activewear
-      "/images/portfolio/4.jpeg",
-      "/images/portfolio/5.jpeg",
-      // eXeX tech
-      "/images/portfolio/2.jpeg",
-      "/images/portfolio/3.jpeg",
+      // B&W slip dress studio
+      "/images/portfolio/13.JPG",
+      "/images/portfolio/1.1.JPG",
+      "/images/portfolio/14.JPG",
+      // Film noir car
+      "/images/portfolio/11.jpeg",
       // Yellow dress NYC
       "/images/portfolio/first.jpeg",
       "/images/portfolio/fourth.jpeg",
       "/images/portfolio/second.jpeg",
       "/images/portfolio/third.jpeg",
       "/images/portfolio/12.jpeg",
-      // Film noir car
-      "/images/portfolio/11.jpeg",
-      // Red scarf urban
-      "/images/portfolio/10.1.jpeg",
-      "/images/portfolio/10.2.jpeg",
-      "/images/portfolio/10.jpeg",
-      // B&W slip dress studio
-      "/images/portfolio/1.1.JPG",
-      "/images/portfolio/13.JPG",
-      "/images/portfolio/14.JPG",
+      // B&W slip dress studio (continued)
       "/images/portfolio/17.JPG",
       "/images/portfolio/18.JPG",
       "/images/portfolio/19.JPG",
       "/images/portfolio/27.JPG",
+      // Red scarf urban
+      "/images/portfolio/10.1.jpeg",
+      "/images/portfolio/10.2.jpeg",
+      "/images/portfolio/10.jpeg",
       // B&W bed
       "/images/portfolio/16.jpeg",
       "/images/portfolio/20.jpeg",
@@ -88,6 +93,14 @@ export const categories: GalleryCategory[] = [
       "/images/portfolio/23.JPG",
       "/images/portfolio/24.JPG",
       "/images/portfolio/25.JPG",
+      // Green hoodie duo
+      "/images/newest/portfolio-duo.JPG",
+      // Dinkwink activewear
+      "/images/portfolio/4.jpeg",
+      "/images/portfolio/5.jpeg",
+      // eXeX tech
+      "/images/portfolio/2.jpeg",
+      "/images/portfolio/3.jpeg",
       // Standalones
       "/images/portfolio/28.jpeg",
       "/images/portfolio/15.jpeg",
