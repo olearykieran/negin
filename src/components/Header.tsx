@@ -66,6 +66,7 @@ export default function Header() {
             href="https://instagram.com/neginpoure"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={t.accessibility.instagram}
             className="text-cream/85 hover:text-cream transition"
           >
             <FaInstagram size={18} />
@@ -122,18 +123,20 @@ export default function Header() {
         </ul>
 
         <div className="flex items-center space-x-4 z-10">
-          <div
-            className="hidden md:flex items-center space-x-1 text-cream/85 hover:text-cream cursor-pointer transition"
+          <button
+            type="button"
+            aria-label={t.accessibility.switchLanguage}
+            className="hidden md:flex items-center gap-1 text-cream/85 hover:text-cream cursor-pointer transition"
             onClick={toggleLang}
           >
             <span className="text-[11px] tracking-[0.16em] uppercase">{t.languageLabel}</span>
             <ChevronDownIcon className="w-4 h-4" />
-          </div>
+          </button>
 
           <button
             className="md:hidden text-cream/85 hover:text-cream focus:outline-none transition"
             onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle Menu"
+            aria-label={t.accessibility.toggleMenu}
           >
             {isOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
           </button>
@@ -143,13 +146,15 @@ export default function Header() {
       {isOpen && (
         <div className="md:hidden bg-black/70 backdrop-blur-sm border-t border-cream/20">
           <ul className="flex flex-col items-start p-6 space-y-4 font-display uppercase tracking-[0.16em] text-[11px] text-cream/90">
-            <div
-              className="flex items-center space-x-1 text-cream/85 hover:text-cream cursor-pointer mb-2"
+            <button
+              type="button"
+              aria-label={t.accessibility.switchLanguage}
+              className="flex items-center gap-1 text-cream/85 hover:text-cream cursor-pointer mb-2"
               onClick={toggleLang}
             >
               <span className="text-[11px] tracking-[0.16em] uppercase">{t.languageLabel}</span>
               <ChevronDownIcon className="w-4 h-4" />
-            </div>
+            </button>
 
             <li>
               <button

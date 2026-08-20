@@ -1,10 +1,14 @@
 // src/components/Hero.tsx
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { externalProfiles } from "@/lib/metadata";
+import { LanguageContext } from "@/context/LanguageContext";
+import translations from "@/lib/translations";
 
 export default function Hero() {
+  const { lang } = useContext(LanguageContext);
+  const t = translations[lang];
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -13,13 +17,11 @@ export default function Hero() {
     return () => clearTimeout(timer);
   }, []);
 
-  const nameWords = ["Negin", "Poure"];
-  const subtitleText = "NEW YORK BASED · FILM & THEATRE";
   const links = [
     { label: "IMDB", href: externalProfiles.imdb, external: true },
     { label: "MMG", href: externalProfiles.mmg, external: true },
-    { label: "RESUME", href: "/NEGIN POURE-3.pdf", download: true },
-    { label: "CONTACT", href: "#contact" },
+    { label: t.hero.resume, href: "/NEGIN POURE-3.pdf", download: true },
+    { label: t.hero.contact, href: "#contact" },
   ];
 
   return (
@@ -45,7 +47,7 @@ export default function Hero() {
               fontSize: "clamp(2rem, 7vw, 6.5rem)",
             }}
           >
-            {nameWords.map((word, i) => (
+            {t.hero.nameWords.map((word, i) => (
               <span
                 key={word}
                 className="inline-block transition-all duration-1000 ease-out"
@@ -55,7 +57,7 @@ export default function Hero() {
                   transitionDelay: `${i * 400 + 200}ms`,
                 }}
               >
-                {word}{i < nameWords.length - 1 ? "\u00A0" : ""}
+                {word}{i < t.hero.nameWords.length - 1 ? "\u00A0" : ""}
               </span>
             ))}
           </h1>
@@ -70,7 +72,7 @@ export default function Hero() {
               transitionDelay: "1100ms",
             }}
           >
-            {subtitleText}
+            {t.hero.subtitle}
           </p>
 
           {/* Links - stagger in one by one */}

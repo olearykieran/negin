@@ -2,7 +2,7 @@
 
 import React, { createContext, useState, useEffect, ReactNode } from "react";
 
-type LanguageType = "en" | "fa";
+export type LanguageType = "en" | "fa";
 
 interface LanguageContextType {
   lang: LanguageType;
@@ -20,25 +20,26 @@ interface LanguageProviderProps {
 
 export const LanguageProvider = ({ children }: LanguageProviderProps) => {
   const [lang, setLang] = useState<LanguageType>("en");
+  const [hasLoadedPreference, setHasLoadedPreference] = useState(false);
 
-  // Helper to switch between English and Farsi
   const toggleLang = () => {
     setLang((prev) => (prev === "en" ? "fa" : "en"));
   };
 
-  // You could add localStorage persistence here if needed
   useEffect(() => {
-    // Example: Load from localStorage
     const savedLang = localStorage.getItem("language") as LanguageType;
     if (savedLang && (savedLang === "en" || savedLang === "fa")) {
       setLang(savedLang);
     }
+    setHasLoadedPreference(true);
   }, []);
 
-  // Save language preference when it changes
   useEffect(() => {
+    if (!hasLoadedPreference) return;
     localStorage.setItem("language", lang);
-  }, [lang]);
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === "fa" ? "rtl" : "ltr";
+  }, [hasLoadedPreference, lang]);
 
   return (
     <LanguageContext.Provider value={{ lang, toggleLang }}>

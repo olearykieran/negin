@@ -189,6 +189,16 @@ html {
   scroll-behavior: smooth;
 }
 
+html[lang="fa"] body,
+html[lang="fa"] .font-body,
+html[lang="fa"] .font-display {
+  font-family: "Vazirmatn", sans-serif !important;
+}
+
+html[lang="fa"] [class*="tracking-"] {
+  letter-spacing: 0 !important;
+}
+
 /* Optional gradient overlay class */
 .film-gradient {
   background: linear-gradient(135deg, rgba(58, 51, 44, 0.95) 0%, rgba(43, 42, 40, 0.85) 100%);

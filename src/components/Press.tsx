@@ -8,20 +8,14 @@ import translations from "@/lib/translations";
 const articles = [
   {
     key: "pozeMagazine" as const,
-    description:
-      "Negin featured in Poze Magazine Volume 86, an international publication showcasing emerging talent in fashion and film.",
     url: "https://online.flipbuilder.com/yisv/aknh/",
   },
   {
     key: "canvasRebel" as const,
-    description:
-      "An in-depth conversation with Negin about her artistic journey, creative process, and future aspirations.",
     url: "https://canvasrebel.com/meet-negin-poure/?fbclid=PAZXh0bgNhZW0CMTEAAaboJjuVS8l46cg9mjmiPDEyBEZhoNBB3cgSvmT",
   },
   {
     key: "boldJourney" as const,
-    description:
-      "A feature on Negin's creative journey, exploring her unique perspective as an artist and the experiences that shape her work.",
     url: "https://boldjourney.com/meet-negin-poure/",
   },
 ];
@@ -36,7 +30,8 @@ export default function Press() {
       <div className="absolute inset-0">
         <img
           src="/images/press/052024-negin-nyc-1060280-1200.jpeg"
-          alt="Press backdrop"
+          alt=""
+          aria-hidden="true"
           className="w-full h-full object-cover"
         />
       </div>
@@ -66,7 +61,7 @@ export default function Press() {
                 {t.press[article.key]}
               </h3>
               <p className="text-sm text-espresso/70 mb-6 leading-relaxed">
-                {article.description}
+                {t.press.articles[article.key]}
               </p>
               <span className="text-xs uppercase tracking-[0.16em] text-espresso/50 hover:text-espresso transition-colors">
                 {t.press.readMore} &rarr;

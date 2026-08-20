@@ -1,8 +1,10 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import { categories, type GalleryCategory } from "@/lib/gallery-data";
+import { LanguageContext } from "@/context/LanguageContext";
+import translations from "@/lib/translations";
 
 interface GalleryProps {
   standalone?: boolean;
@@ -14,10 +16,15 @@ const smallcaps = { fontFamily: '"Cartesius Smallcaps", serif' };
 function GalleryTriptych({
   category,
   loaded,
+  lang,
 }: {
   category: GalleryCategory;
   loaded: boolean;
+  lang: "en" | "fa";
 }) {
+  const t = translations[lang];
+  const categoryName = t.gallery.categories.portfolio;
+  const photoCount = new Intl.NumberFormat(lang === "fa" ? "fa-IR" : "en-US", { useGrouping: false }).format(category.photos.length);
   const plates = category.plates ?? [{ src: category.image, position: category.position }];
   const [left, center, right] = plates.length === 3 ? plates : [null, plates[0], null];
 
@@ -35,20 +42,20 @@ function GalleryTriptych({
   return (
     <Link
       href={category.slug === "portfolio" ? "/gallery" : `/gallery/${category.slug}`}
-      aria-label={`View the full ${category.name.toLowerCase()}`}
+      aria-label={t.gallery.viewGallery}
       className="group flex w-full flex-col items-center text-center"
     >
       <p
         className="text-[10px] tracking-[0.3em] text-cream/70 transition-all duration-1000 ease-out sm:text-[11px]"
         style={{ ...smallcaps, ...rise(150) }}
       >
-        SELECTED IMAGERY
+        {t.gallery.selectedImagery}
       </p>
       <h1
         className="mt-3 font-display uppercase leading-none tracking-display text-cream drop-shadow-[0_2px_16px_rgba(0,0,0,0.7)] transition-all duration-1000 ease-out"
         style={{ fontSize: "clamp(2.4rem, 5vw, 4rem)", ...rise(300) }}
       >
-        {category.name}
+        {categoryName}
       </h1>
 
       <div className="mt-8 flex items-center justify-center sm:mt-9">
@@ -82,7 +89,7 @@ function GalleryTriptych({
           >
             <img
               src={center.src}
-              alt={category.name}
+              alt={categoryName}
               className={`${plateImg} group-hover:scale-[1.02]`}
               style={{ objectPosition: center.position || "center center" }}
             />
@@ -116,7 +123,7 @@ function GalleryTriptych({
       >
         <span className="h-px w-10 bg-cream/40 transition-all duration-500 group-hover:w-14 group-hover:bg-cream/70" />
         <span>
-          VIEW THE FULL PORTFOLIO · {category.photos.length} PHOTOGRAPHS
+          {t.gallery.viewFullPortfolio} · {photoCount} {t.gallery.photographs}
         </span>
         <span aria-hidden="true">-&gt;</span>
       </div>
@@ -128,6 +135,7 @@ export default function Gallery({
   standalone = true,
   sectionId,
 }: GalleryProps) {
+  const { lang } = useContext(LanguageContext);
   const resolvedSectionId = sectionId ?? (standalone ? "gallery" : undefined);
   const portfolio = categories.find((category) => category.slug === "portfolio");
   const [loaded, setLoaded] = useState(false);
@@ -147,7 +155,7 @@ export default function Gallery({
       } ${resolvedSectionId ? "scroll-mt-40" : ""}`}
     >
       <div className="relative z-10 flex min-h-[calc(100vh-6rem)] items-center justify-center px-6 py-10 sm:px-10">
-        <GalleryTriptych category={portfolio} loaded={loaded} />
+        <GalleryTriptych category={portfolio} loaded={loaded} lang={lang} />
       </div>
     </section>
   );
