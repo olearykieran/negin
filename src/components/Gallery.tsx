@@ -34,7 +34,7 @@ function GalleryTriptych({
 
   return (
     <Link
-      href={`/gallery/${category.slug}`}
+      href={category.slug === "portfolio" ? "/gallery" : `/gallery/${category.slug}`}
       aria-label={`View the full ${category.name.toLowerCase()}`}
       className="group flex w-full flex-col items-center text-center"
     >
@@ -146,16 +146,6 @@ export default function Gallery({
         standalone ? "pt-24" : "pt-8"
       } ${resolvedSectionId ? "scroll-mt-40" : ""}`}
     >
-      <img
-        src="/images/gallery-bg.jpg"
-        alt=""
-        aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-cover object-[42%_28%]"
-      />
-      <div className="absolute inset-0 bg-black/30" />
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.6)_0%,rgba(0,0,0,0.18)_38%,rgba(0,0,0,0.78)_100%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_58%_62%_at_50%_54%,rgba(0,0,0,0.5)_0%,rgba(0,0,0,0)_100%)]" />
-
       <div className="relative z-10 flex min-h-[calc(100vh-6rem)] items-center justify-center px-6 py-10 sm:px-10">
         <GalleryTriptych category={portfolio} loaded={loaded} />
       </div>

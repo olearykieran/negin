@@ -16,26 +16,16 @@ export default function GalleryCategoryView({
 
   return (
     <section className="relative min-h-screen bg-black pt-24 text-white scroll-mt-40">
-      <div className="absolute inset-0" aria-hidden="true">
-        <div className="sticky top-0 h-screen overflow-hidden">
-          <img
-            src="/images/gallery-bg.jpg"
-            alt=""
-            className="h-full w-full object-cover object-[38%_26%]"
-          />
-          <div className="absolute inset-0 bg-black/55" />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.72)_0%,rgba(0,0,0,0.42)_34%,rgba(0,0,0,0.72)_100%)]" />
-        </div>
-      </div>
-
       <div className="relative z-10 px-4 pb-24 pt-8 sm:px-6 lg:px-10">
         <div className="mx-auto max-w-7xl">
-          <Link
-            href="/gallery"
-            className="mb-8 inline-block text-xs uppercase tracking-[0.18em] text-white/62 hover:text-white transition-colors"
-          >
-            &larr; {t.gallery.backButton}
-          </Link>
+          {category.slug !== "portfolio" && (
+            <Link
+              href="/gallery"
+              className="mb-8 inline-block text-xs uppercase tracking-[0.18em] text-white/62 hover:text-white transition-colors"
+            >
+              &larr; {t.gallery.backButton}
+            </Link>
+          )}
 
           <h2 className="mb-10 text-4xl font-display uppercase tracking-display text-white drop-shadow-[0_2px_18px_rgba(0,0,0,0.62)] sm:text-5xl">
             {category.name}

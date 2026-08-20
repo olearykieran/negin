@@ -1,5 +1,5 @@
 import React from "react";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -26,6 +26,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function GalleryCategoryPage({ params }: PageProps) {
   const { slug } = await params;
+
+  if (slug === "portfolio") {
+    permanentRedirect("/gallery");
+  }
+
   const category = categories.find((c) => c.slug === slug);
   if (!category) notFound();
 

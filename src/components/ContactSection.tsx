@@ -54,9 +54,9 @@ export default function ContactSection() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="/images/contact-bg.JPG"
+          src="/images/gallery-bg.jpg"
           alt=""
-          className="w-full h-full object-cover object-[45%_center]"
+          className="w-full h-full object-cover object-[42%_28%]"
         />
       </div>
       <div className="absolute inset-0 bg-black/62" />

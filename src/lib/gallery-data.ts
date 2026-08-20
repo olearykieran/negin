@@ -101,12 +101,13 @@ export const categories: GalleryCategory[] = [
       // eXeX tech
       "/images/portfolio/2.jpeg",
       "/images/portfolio/3.jpeg",
-      // Standalones
+      // Standalone
       "/images/portfolio/28.jpeg",
-      "/images/portfolio/15.jpeg",
-      // Nature / park
-      "/images/portfolio/6.JPG",
-      "/images/portfolio/26.jpeg",
+      // New portfolio additions
+      "/images/portfolio/home-team-card-187.jpg",
+      "/images/portfolio/central-park-rug-01.jpg",
+      "/images/portfolio/central-park-rug-02.jpg",
+      "/images/portfolio/district-loom-central-park.jpg",
     ],
   },
 ];
