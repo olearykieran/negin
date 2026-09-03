@@ -33,7 +33,7 @@ export default function WorkShowreel() {
         <div className="max-w-4xl mx-auto">
           <div className="relative w-full aspect-video overflow-hidden border border-white/18 bg-black shadow-[0_28px_90px_rgba(0,0,0,0.45)]">
             <iframe
-              src="https://www.youtube.com/embed/sRhfWuLBEL4"
+              src="https://www.youtube.com/embed/B0AIrRO2feQ"
               title={t.iframeTitle}
               className="absolute inset-0 h-full w-full"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -43,7 +43,7 @@ export default function WorkShowreel() {
           </div>
           <p className="mt-4 text-center text-xs sm:text-sm text-white/70">
             <a
-              href="https://youtube.com/watch?v=sRhfWuLBEL4&feature=youtu.be"
+              href="https://www.youtube.com/watch?v=B0AIrRO2feQ"
               target="_blank"
               rel="noopener noreferrer"
               className="underline underline-offset-4 hover:text-white transition"
