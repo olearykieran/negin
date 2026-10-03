@@ -133,7 +133,7 @@ const translations = {
       intro:
         "Negin Poure is a New York and Brooklyn-based lead actor and model. This page centralizes professional materials for agency review, casting submissions, and representation inquiries.",
       viewImdb: "View IMDb Profile",
-      viewMmg: "View MMG Portfolio",
+      viewPortfolio: "View Portfolio",
       downloadResume: "Download Resume",
       stats: [
         { label: "Location", value: "NYC + Brooklyn" },
@@ -160,7 +160,7 @@ const translations = {
         {
           question: "Where can agencies review modeling and portfolio materials?",
           answer:
-            "Current portfolio materials are available on Negin Poure's MMG profile page.",
+            "Current portfolio materials are available in the gallery on this website.",
         },
         {
           question: "How can representation or casting teams get in touch?",
@@ -308,7 +308,7 @@ const translations = {
       intro:
         "نگین پور بازیگر نقش اول و مدل مستقر در نیویورک و بروکلین است. این صفحه منابع حرفه‌ای لازم برای بررسی آژانس‌ها، معرفی به پروژه‌های بازیگری و گفت‌وگو دربارهٔ نمایندگی را یک‌جا ارائه می‌کند.",
       viewImdb: "مشاهدهٔ پروفایل IMDb",
-      viewMmg: "مشاهدهٔ پورتفولیوی MMG",
+      viewPortfolio: "مشاهدهٔ پورتفولیو",
       downloadResume: "دانلود رزومه",
       stats: [
         { label: "محل فعالیت", value: "نیویورک + بروکلین" },
@@ -335,7 +335,7 @@ const translations = {
         {
           question: "آژانس‌ها کجا می‌توانند نمونه‌کارهای مدلینگ و پورتفولیو را بررسی کنند؟",
           answer:
-            "نمونه‌کارهای فعلی در صفحهٔ پروفایل MMG نگین پور در دسترس است.",
+            "نمونه‌کارهای فعلی در گالری همین وب‌سایت در دسترس است.",
         },
         {
           question: "گروه‌های نمایندگی یا انتخاب بازیگر چگونه می‌توانند تماس بگیرند؟",

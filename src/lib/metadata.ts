@@ -29,7 +29,6 @@ export const siteUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://neginpoure.c
 
 export const externalProfiles = {
   imdb: "https://www.imdb.com/name/nm15311801/",
-  mmg: "https://www.nymmg.com/portfolios/negin-poure",
   instagram: "https://instagram.com/neginpoure",
 };
 
@@ -37,7 +36,7 @@ export const metadata: PageMetadata = {
   home: {
     title: "Negin Poure | Lead Actor for Film & Theatre",
     description:
-      "Official website of Negin Poure, New York and Brooklyn based lead actor and model. Explore film and theatre work, press materials, and direct casting-ready links to IMDb, MMG portfolio, and resume.",
+      "Official website of Negin Poure, New York and Brooklyn based lead actor and model. Explore film and theatre work, press materials, and direct casting-ready links to IMDb, portfolio, and resume.",
     keywords: [
       "Negin Poure",
       "Negin Poure lead actor",
@@ -53,7 +52,6 @@ export const metadata: PageMetadata = {
       "lead actress",
       "lead role actor",
       "IMDb",
-      "MMG Models",
       "performance artist",
     ],
     ogImage: `${siteUrl}/images/new_c3.jpg`,
@@ -76,7 +74,7 @@ export const metadata: PageMetadata = {
   forCasting: {
     title: "For Casting | Negin Poure",
     description:
-      "Casting-ready profile for Negin Poure, a New York and Brooklyn-based lead actor. Find IMDb, MMG portfolio, resume, and contact details for representation and casting inquiries.",
+      "Casting-ready profile for Negin Poure, a New York and Brooklyn-based lead actor. Find IMDb, portfolio, resume, and contact details for representation and casting inquiries.",
     keywords: [
       "for casting actress NYC",
       "Brooklyn lead actress",
@@ -84,7 +82,7 @@ export const metadata: PageMetadata = {
       "casting-ready actor profile",
       "Negin Poure casting",
       "Negin Poure IMDb",
-      "Negin Poure MMG",
+      "Negin Poure portfolio",
       "representation inquiries",
     ],
     ogImage: `${siteUrl}/images/new_c3.jpg`,

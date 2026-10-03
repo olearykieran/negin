@@ -22,7 +22,7 @@ const faqItems = [
   {
     question: "Where can agencies review modeling and portfolio materials?",
     answer:
-      "Current portfolio materials are available on Negin Poure's MMG profile page.",
+      "Current portfolio materials are available in the gallery on this website.",
   },
   {
     question: "How can representation or casting teams get in touch?",

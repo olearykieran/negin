@@ -42,12 +42,10 @@ export default function ForCasting() {
               {t.viewImdb}
             </a>
             <a
-              href={externalProfiles.mmg}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/gallery"
               className="px-5 py-3 border border-espresso text-espresso text-xs sm:text-sm uppercase tracking-[0.16em] font-semibold hover:bg-espresso hover:text-cream transition"
             >
-              {t.viewMmg}
+              {t.viewPortfolio}
             </a>
             <a
               href="/NEGIN POURE-3.pdf"

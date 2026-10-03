@@ -45,7 +45,7 @@ const schemaGraph = {
         "Theatre performance",
         "Commercial performance",
       ],
-      sameAs: [externalProfiles.imdb, externalProfiles.mmg, externalProfiles.instagram],
+      sameAs: [externalProfiles.imdb, externalProfiles.instagram],
     },
     {
       "@type": "WebSite",

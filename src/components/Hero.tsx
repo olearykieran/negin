@@ -19,7 +19,6 @@ export default function Hero() {
 
   const links = [
     { label: "IMDB", href: externalProfiles.imdb, external: true },
-    { label: "MMG", href: externalProfiles.mmg, external: true },
     { label: t.hero.resume, href: "/NEGIN POURE-3.pdf", download: true },
     { label: t.hero.contact, href: "#contact" },
   ];
